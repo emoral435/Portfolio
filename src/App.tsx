@@ -2,7 +2,7 @@ function App() {
 
   return (
     <>
-      wa
+      Hello
     </>
   )
 }
