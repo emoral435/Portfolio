@@ -1,11 +1,9 @@
-import { ThemeProvider } from "./context/ThemeContext/ThemeContext"
+import StickyNav from "./components/StickyNav/StickyNav"
 
 function App() {
   return (
     <>
-    <ThemeProvider> {/* NOTE this just gives us access to the useTheme hook we made that tells us whether it is dark mode or not */}
-        
-      </ThemeProvider>
+      <StickyNav />
     </>
   )
 }
