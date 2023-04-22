@@ -1,8 +1,11 @@
-function App() {
+import { ThemeProvider } from "./context/ThemeContext/ThemeContext"
 
+function App() {
   return (
     <>
-      Hello
+    <ThemeProvider> {/* NOTE this just gives us access to the useTheme hook we made that tells us whether it is dark mode or not */}
+        
+      </ThemeProvider>
     </>
   )
 }
