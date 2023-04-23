@@ -1,21 +1,13 @@
-import { useTheme } from "@emotion/react"
+import { Box, Toolbar, Typography } from "@mui/material"
 import StickyNav from "./components/StickyNav/StickyNav"
-import Box from '@mui/material/Box';
 
 function App() {
-  const theme = useTheme()
-  
   return (
-    <div style={{
-      backgroundColor: theme.palette.background.default,
-      width: '100vw',
-      display: 'flex',
-      flexDirection: 'column',
-      justifyContent: 'center',
-      alignItems: 'center'
-      }}>
-      <Box>
-        <StickyNav />
+    <div className="app">
+      <StickyNav />
+      <Box component="main" sx={{ p: 3 }}>
+        <Toolbar />
+        <div>huh</div>
       </Box>
     </div>
   )

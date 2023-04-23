@@ -2,6 +2,8 @@
     --primaryDark: #002884;
     --primaryLight: #757ce8;
     --primaryMain: #3f50b5;
+    --scrollbarBG: #6472b1;
+    --thumbBG: #90A4AE;
 }
 
 *, *::before, *::after {
@@ -11,6 +13,30 @@
     font-family: 'Poppins';
 }
 
+
+body::-webkit-scrollbar {
+    width: 11px;
+}
+body {
+    scrollbar-width: thin;
+    scrollbar-color: var(--thumbBG) var(--scrollbarBG);
+}
+body::-webkit-scrollbar-track {
+    background: var(--scrollbarBG);
+}
+body::-webkit-scrollbar-thumb {
+    background-color: var(--thumbBG) ;
+    border-radius: 6px;
+    border: 3px solid var(--scrollbarBG);
+}
+
+.app {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 130vh;
+    position: relative;
+}
 
 .button {
     background: none;
@@ -38,4 +64,15 @@
 
 .arrow.flip {
     transform: scaleX(-1);
+}
+
+.grid-container {
+    display: grid;
+} 
+.grid-auto-fit {
+    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+}
+
+.list-item {
+    font-size: 3rem;
 }

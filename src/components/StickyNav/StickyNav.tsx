@@ -18,11 +18,13 @@ import arrow from '/src/assets/arrow.svg'
 import arrowWhite from '/src/assets/arrowWhite.svg'
 import mobileNav from '/src/assets/mobileNav.svg'
 import mobileNavWhite from '/src/assets/mobileNavWhite.svg'
+import nightMode from '/src/assets/nightMode.svg'
+import lightMode from '/src/assets/lightMode.svg'
 
-const drawerHeight = 170;
-const navItems = ['Home', 'About', 'Koalifications', 'Projects', 'Contact'];
+const drawerHeight = '100%';
+const navItems = ['Home', 'About', 'Experience', 'Koalifications', 'Projects', 'Contact'];
 
-export function StickyNav() {
+export function Home() {
   const [mobileOpen, setMobileOpen] = useState(false);
   const theme = useTheme()
   const colorMode = useContext(ColorModeContext)
@@ -32,8 +34,8 @@ export function StickyNav() {
   };
 
   const drawer = (
-    <Box onClick={handleDrawerToggle} sx={{ textAlign: 'center' }}>
-      <List>
+    <Box onClick={handleDrawerToggle} sx={{ textAlign: 'center', width: '100%' }}>
+      <List className="grid-container grid-auto-fit">
         {navItems.map((item) => (
           <ListItem key={item} disablePadding>
             <ListItemButton sx={{ textAlign: 'center' }}>
@@ -46,10 +48,10 @@ export function StickyNav() {
   );
 
   return (
-    <Box sx={{ display: 'flex' }}>
+    <Box sx={{ display: 'flex', maxHeight: 'min-content' }}>
       <CssBaseline />
       <AppBar component="nav" sx={{ background: theme.palette.background.default, color: theme.palette.text.primary, boxShadow: 'none' }}>
-        <Toolbar sx={{ display: 'flex', justifyContent: {sm: 'flex-start', md:'space-around'}, gap: '2rem' }}>
+        <Toolbar sx={{ display: 'flex', justifyContent: 'space-around', gap: '2rem' }}>
           <IconButton
             color="inherit"
             aria-label="open drawer"
@@ -77,19 +79,20 @@ export function StickyNav() {
                 ))}
               </Box>
             <button className="button nav-btn" onClick={colorMode.toggleColorMode} style={{display: 'flex', flexDirection: 'column', alignItems: 'center'}}>
-                {theme.palette.mode === 'dark' ? <img src={arrowWhite} alt="" className="arrow"/>  : <img src={arrow} alt="" className="arrow"/>}
+                {theme.palette.mode === 'dark' ? <img src={lightMode} alt="" className="arrow"/>  : <img src={nightMode} alt="" className="arrow"/>}
                 <section style={{display: 'flex', alignItems: 'center'}}>
                     {theme.palette.mode === 'dark' ? <img src={arrowWhite} alt="" className="arrow"/>  : <img src={arrow} alt="" className="arrow"/>}
                     <h6 style={{fontWeight: 'bold', fontFamily: 'Poppins', fontSize: 'large' }} >Dark Mode</h6>
                     {theme.palette.mode === 'dark' ? <img src={arrowWhite} alt="" className="arrow flip" /> : <img src={arrow} alt="" className="arrow flip" />} 
                 </section>
-                {theme.palette.mode === 'dark' ? <img src={arrowWhite} alt="" className="arrow"/>  : <img src={arrow} alt="" className="arrow"/>}
+                {theme.palette.mode === 'dark' ? <img src={lightMode} alt="" className="arrow"/>  : <img src={nightMode} alt="" className="arrow"/>}
             </button>
           </section>
         </Toolbar>
       </AppBar>
       <Box component="nav">
         <Drawer
+          anchor="top"
           variant="temporary"
           open={mobileOpen}
           onClose={handleDrawerToggle}
@@ -97,7 +100,7 @@ export function StickyNav() {
             keepMounted: true, // Better open performance on mobile.
           }}
           sx={{
-            display: { xs: 'block', sm: 'none' },
+            display: { xs: 'block', md: 'none' },
             '& .MuiDrawer-paper': { boxSizing: 'border-box', width: drawerHeight },
           }}
         >
@@ -108,4 +111,4 @@ export function StickyNav() {
   );
 }
 
-export default StickyNav
+export default Home
