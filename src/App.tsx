@@ -10,6 +10,7 @@ function App() {
       backgroundColor: theme.palette.background.default,
       width: '100vw',
       display: 'flex',
+      flexDirection: 'column',
       justifyContent: 'center',
       alignItems: 'center'
       }}>
