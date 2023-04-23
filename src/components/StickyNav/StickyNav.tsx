@@ -68,7 +68,7 @@ export function Home() {
             sx={{ fontWeight: 'bold', fontFamily: 'Poppins' }}
             className="name"
           >
-            Eduardo Morales
+            <a href="#">Eduardo Morales</a>
           </Typography>
           <section style={{display: 'flex', gap: '1rem'}}>
               <Box sx={{ display: { xs: 'none', md: 'flex' }, gap: '1rem' }}>

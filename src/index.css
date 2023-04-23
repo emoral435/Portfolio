@@ -62,6 +62,16 @@ body::-webkit-scrollbar-thumb {
     width: 1rem; height: 1rem;
 }
 
+.intro-img {
+    width: 1.5rem; height: 1.5rem; margin-right: 8px;
+}
+
+@media all and (max-width: 700px) {
+    .intro-img {
+        width: 1rem; height: 1rem; margin-right: 8px;
+    }
+}
+
 .arrow.flip {
     transform: scaleX(-1);
 }
@@ -76,3 +86,13 @@ body::-webkit-scrollbar-thumb {
 .list-item {
     font-size: 3rem;
 }
+
+.intro-img-container {
+    display: flex;
+    align-items: center;
+}
+
+a {
+    color: inherit; /* blue colors for links too */
+    text-decoration: inherit; /* no underline */
+  }
