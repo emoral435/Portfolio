@@ -4,6 +4,7 @@
     --primaryMain: #3f50b5;
     --scrollbarBG: #6472b1;
     --thumbBG: #90A4AE;
+    --footerNav: #d9b63c;
 }
 
 *, *::before, *::after {
@@ -34,7 +35,7 @@ body::-webkit-scrollbar-thumb {
     display: flex;
     flex-direction: column;
     width: 100%;
-    height: 130vh;
+    height: 100%;
     position: relative;
 }
 
@@ -71,6 +72,24 @@ body::-webkit-scrollbar-thumb {
         width: 1rem; height: 1rem; margin-right: 8px;
     }
 }
+.intro-side-img {
+    width: 5rem; height: 5rem; margin-right: 8px;
+}
+
+@media all and (max-width: 700px) {
+    .intro-side-img {
+        width: 3rem; height: 3rem; margin-right: 8px;
+    }
+}
+.intro-sidefooter-img {
+    width: 3rem; height: 3rem; margin-right: 8px;
+}
+
+@media all and (max-width: 700px) {
+    .intro-sidefooter-img {
+        width: 2rem; height: 2rem; margin-right: 8px;
+    }
+}
 
 .arrow.flip {
     transform: scaleX(-1);
@@ -96,3 +115,20 @@ a {
     color: inherit; /* blue colors for links too */
     text-decoration: inherit; /* no underline */
   }
+
+  .profile-pic {
+    width: 100%; height: 100%; border-radius: 46% 54% 53% 47% / 30% 28% 72% 70% ;  
+  }
+
+  .footer {
+    display: flex;
+    padding: 4rem 2rem;
+    background-color: var(--primaryMain);
+    width: 100%;
+    color: white;
+  }
+
+  .footer-nav:hover {
+    color: var(--footerNav);
+    cursor: pointer;
+}

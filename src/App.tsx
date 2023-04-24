@@ -8,14 +8,14 @@ function App() {
   return (
     <div className="app">
       <StickyNav />
-      <Box component="main" sx={{ p: 3 }} id="home">
+      <Box component="main" sx={{ p: 3 }} id="Home">
         <Toolbar />
         <Box sx={{ marginTop: '5rem', display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', gap: '5rem'}} >
           <Introduction />
           <Information />
-          <Footer />
         </Box>
       </Box>
+      <Footer />
     </div>
   )
 }

@@ -70,12 +70,14 @@ export function Home() {
           >
             <a href="#">Eduardo Morales</a>
           </Typography>
-          <section style={{display: 'flex', gap: '1rem'}}>
+          <section style={{display: 'flex', gap: '1rem', alignItems: 'center'}}>
               <Box sx={{ display: { xs: 'none', md: 'flex' }, gap: '1rem' }}>
                 {navItems.map((item) => (
-                  <button key={item} style={{fontWeight: 'bold', fontFamily: 'Poppins', fontSize: 'large', marginLeft: '1rem'}} className="button nav-btn" >
-                    {item}
-                  </button>
+                  <a href={`#${item}`} key={item}>
+                    <button style={{fontWeight: 'bold', fontFamily: 'Poppins', fontSize: 'large', marginLeft: '1rem'}} className="button nav-btn" >
+                      {item}
+                    </button>
+                  </a>
                 ))}
               </Box>
             <button className="button nav-btn" onClick={colorMode.toggleColorMode} style={{display: 'flex', flexDirection: 'column', alignItems: 'center'}}>
