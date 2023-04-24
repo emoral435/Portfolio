@@ -132,3 +132,18 @@ a {
     color: var(--footerNav);
     cursor: pointer;
 }
+
+.information {
+    display: flex;
+    flex-direction: column;
+}
+
+.accordian-img {
+    width: 5rem; height: 5rem;
+}
+
+@media all and (max-width: 700px) {
+    .accordian-img {
+        width: 2.5rem; height: 2.5rem;
+    }
+}

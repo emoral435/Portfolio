@@ -22,7 +22,7 @@ import nightMode from '/src/assets/nightMode.svg'
 import lightMode from '/src/assets/lightMode.svg'
 
 const drawerHeight = '100%';
-const navItems = ['Home', 'About', 'Experience', 'Koalifications', 'Projects', 'Contact'];
+const navItems = ['Home', 'About', 'Experience', 'Projects', 'Koalifications', 'Contact Me'];
 
 export function Home() {
   const [mobileOpen, setMobileOpen] = useState(false);
