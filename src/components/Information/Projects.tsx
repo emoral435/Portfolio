@@ -10,7 +10,7 @@ const Projects = () => {
     const projectsSrc = theme.palette.mode == 'light' ? PROJECTS : PROJECTSW
 
   return (
-    <Accordion id='Projects' >
+    <Accordion id='Projects' style={{ boxShadow: "none" }} >
         <AccordionSummary
           expandIcon={<div></div>}
           sx={{display: 'flex', justifyContent: 'center'}}

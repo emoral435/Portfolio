@@ -22,7 +22,7 @@ import nightMode from '/src/assets/nightMode.svg'
 import lightMode from '/src/assets/lightMode.svg'
 
 const drawerHeight = '100%';
-const navItems = ['Home', 'About', 'Experience', 'Projects', 'Koalifications', 'Contact Me'];
+const navItems = ['Home', 'About', 'Experience', 'Projects', 'Koalifications', 'Contact'];
 
 export function Home() {
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -38,9 +38,11 @@ export function Home() {
       <List className="grid-container grid-auto-fit">
         {navItems.map((item) => (
           <ListItem key={item} disablePadding>
-            <ListItemButton sx={{ textAlign: 'center' }}>
-              <ListItemText primary={item} />
-            </ListItemButton>
+            <a href={`#${item}`}>
+              <ListItemButton sx={{ textAlign: 'center' }}>
+                <ListItemText primary={item} />
+              </ListItemButton>
+            </a>
           </ListItem>
         ))}
       </List>

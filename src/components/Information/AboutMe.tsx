@@ -1,15 +1,36 @@
 import { useTheme } from '@emotion/react'
-import { Accordion, AccordionDetails, AccordionSummary, Box, Typography } from '@mui/material'
+import { Accordion, AccordionDetails, AccordionSummary, Box, Typography, Button } from '@mui/material'
 import info from '/src/assets/info.svg'
 import infoW from '/src/assets/infoW.svg'
+import RESUME from '/src/Resume/EduardoMorales.pdf'
+import ARROW from '/src/assets/arrowWhite.svg'
+
+const techStack = [
+  {num: '5+', desc: 'Programming Languages'},
+  {num: '8+', desc: 'Completed Github Projects'},
+  {num: '4+', desc: 'Frameworks and Libraries'}
+]
+
+
 
 const AboutMe = () => {
     const theme = useTheme()
 
     const aboutSrc = theme.palette.mode == 'light' ? info : infoW
 
+    const displayStacks = (
+      <Box sx={{display: 'flex', gap: 4}}>
+        {techStack.map((item) => (
+          <Box component={'section'} sx={{display: 'flex', flexDirection: 'column', maxWidth: 'min-content', alignItems: 'center'}}>
+            <h2 style={{color: theme.palette.text.primary, fontSize: '1.7rem'}}>{item.num}</h2>
+            <h3 style={{textAlign: 'center'}}>{item.desc}</h3>
+          </Box>
+        ))}
+      </Box>
+    )
+
   return (
-    <Accordion id='About'>
+    <Accordion id='About' style={{ boxShadow: "none" }}>
         <AccordionSummary
           expandIcon={<div></div>}
           sx={{display: 'flex', justifyContent: 'center'}}
@@ -19,16 +40,26 @@ const AboutMe = () => {
             <img src={aboutSrc} alt="" className='accordian-img' />
           </Typography>
         </AccordionSummary>
-        <AccordionDetails>
+        <AccordionDetails style={{ boxShadow: "none" }}>
         <Typography sx={{color: theme.palette.text.secondary, fontSize: '1.2rem'}}>
             <Box sx={{color: theme.palette.text.secondary, fontSize: {xs: '.6rem', md: '.8rem'}, fontWeight: 600, display: 'flex', flexDirection: 'column', gap: 3}}>
               <h2>I discovered my passion for problem solving ever since I was little and tinkered with origami. The intricacies of origami and the problems
-                 that a simple sheet of paper can help me solve, such as making my own container to store paper clips, gave me a lot of joy. Flash forward to today, and competing in hackathons like SparkHacks and hearing stories about the types of problems that 
+                 that a simple sheet of paper can help me solve–such as making my own container to store paper clips–gave me lots of joy. Flash forward to today, and competing in hackathons like SparkHacks and hearing stories about the types of problems that 
               computer scientists can solve all lead me to studying computer science at the University of Illinois Chicago. I am interested in
-              making websites accessible, and I am interested in mobile app development with Swift. </h2>
+              making dynamic websites and mobile app development with Swift. </h2>
               <h2>I like building projects related to my toolkit that solves little problems around my life that I believe can be done more effectively. I also
-              love trying new foods to eat around the city. I am also a google local tour, related to my food habits. I also love to go to the gym, and love being outdoors.</h2>
-              <Box></Box>
+              love trying new foods to eat around the city. I am also a google local tour, related to my food habits. I also love to go to the gym, and love being outdoors.
+              If you would like to know more about me, click on my resume below.</h2>
+              <Box sx={{display: 'flex', flexDirection: {xs: 'column', md: 'row'}, alignItems: 'center', justifyContent: 'space-around', gap: 4}}>
+                {displayStacks}
+                <a href={RESUME} download="EduardoMorales.pdf">
+                    <Button variant='contained' size='large' sx={{textTransform: 'none', padding: {xs: '1rem 1rem',md: '2rem 2rem'}, fontFamily: 'Poppins', borderRadius: '10px'}}>
+                      <img src={ARROW} alt="" className='arrow'/>
+                      <h2>Download Resume</h2>
+                      <img src={ARROW} alt="" className='arrow flip' />
+                    </Button>
+                </a>
+              </Box>
             </Box>
           </Typography>
         </AccordionDetails>

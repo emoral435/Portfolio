@@ -9,7 +9,7 @@ const ContactMe = () => {
     const contactSrc = theme.palette.mode == 'light' ? contact : contactW
 
   return (
-    <Accordion id='Contact Me' >
+    <Accordion id='Contact Me' style={{ boxShadow: "none" }}>
         <AccordionSummary
           expandIcon={<div></div>}
           sx={{display: 'flex', justifyContent: 'center'}}

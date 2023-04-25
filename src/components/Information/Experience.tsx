@@ -9,7 +9,7 @@ const Experience = () => {
     const expSrc = theme.palette.mode == 'light' ? exp : expW
 
   return (
-    <Accordion id='Experience' >
+    <Accordion id='Experience' style={{ boxShadow: "none" }} >
         <AccordionSummary
           expandIcon={<div></div>}
           sx={{display: 'flex', justifyContent: 'center'}}

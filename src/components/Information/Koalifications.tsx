@@ -4,7 +4,7 @@ import KOALA from '/src/assets/koala.svg'
 
 const Koalifications = () => {
   return (
-    <Accordion id='Koalifications' >
+    <Accordion id='Koalifications' style={{ boxShadow: "none" }} >
         <AccordionSummary
           expandIcon={<div></div>}
           sx={{display: 'flex', justifyContent: 'center'}}

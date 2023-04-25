@@ -5,11 +5,13 @@ import Koalifications from './Koalifications';
 import ContactMe from './Contact';
 import { Box } from '@mui/material';
 
+// BG COLOR : backgroundColor: '#3f50b5', 
+
 export default function Information() {
 
   return (
-    <Box component={'div'} sx={{backgroundColor: '#3f50b5', width: {xs: '100%', lg: '80rem'}}}>
-      <Box sx={{p: 3}}>
+    <Box component={'div'} sx={{width: {xs: '100%', lg: '80rem'}}}>
+      <Box sx={{p: 1}}>
           <AboutMe />
           <Experience />
           <Projects />
