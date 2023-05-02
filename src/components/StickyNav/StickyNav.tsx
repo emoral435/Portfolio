@@ -22,7 +22,7 @@ import nightMode from '/src/assets/nightMode.svg'
 import lightMode from '/src/assets/lightMode.svg'
 
 const drawerHeight = '100%';
-const navItems = ['Home', 'About', 'Experience', 'Projects', 'Koalifications', 'Contact'];
+const navItems = ['Home', 'About', 'Experience', 'Projects', 'Koalifications', 'Contact Me'];
 
 export function Home() {
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -75,7 +75,7 @@ export function Home() {
           <section style={{display: 'flex', gap: '1rem', alignItems: 'center'}}>
               <Box sx={{ display: { xs: 'none', md: 'flex' }, gap: '1rem' }}>
                 {navItems.map((item) => (
-                  <a href={`#${item}`} key={item}>
+                  <a href={item === 'Contact Me' ? 'mailto:emoral435@gmail.com' : `#${item}`} key={item}>
                     <button style={{fontWeight: 'bold', fontFamily: 'Poppins', fontSize: 'large', marginLeft: '1rem'}} className="button nav-btn" >
                       {item}
                     </button>

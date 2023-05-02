@@ -7,6 +7,10 @@
     --footerNav: #d9b63c;
 }
 
+html {
+    scroll-behavior: smooth;
+  }
+
 *, *::before, *::after {
     margin: 0px;
     padding: 0px;
@@ -146,4 +150,13 @@ a {
     .accordian-img {
         width: 2.5rem; height: 2.5rem;
     }
+}
+
+.job {
+    height: 100%;
+    width: 100%;
+}
+
+.job-title {
+    font-style: italic;
 }

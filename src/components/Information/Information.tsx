@@ -2,7 +2,6 @@ import AboutMe from './AboutMe';
 import Experience from './Experience';
 import Projects from './Projects';
 import Koalifications from './Koalifications';
-import ContactMe from './Contact';
 import { Box } from '@mui/material';
 
 // BG COLOR : backgroundColor: '#3f50b5', 
@@ -16,7 +15,6 @@ export default function Information() {
           <Experience />
           <Projects />
           <Koalifications />
-          <ContactMe />
       </Box>
     </Box>
   );
