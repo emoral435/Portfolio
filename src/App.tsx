@@ -1,10 +1,11 @@
-import { Box, Toolbar, Typography } from "@mui/material"
+import { Box, Toolbar } from "@mui/material"
 import StickyNav from "./components/StickyNav/StickyNav"
 import Introduction from "./components/Introduction/Introduction"
 import Information from "./components/Information/Information"
 import Footer from "./components/Footer/Footer"
 
 function App() {
+
   return (
     <div className="app">
       <StickyNav />

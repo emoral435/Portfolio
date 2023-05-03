@@ -67,6 +67,10 @@ body::-webkit-scrollbar-thumb {
     width: 1rem; height: 1rem;
 }
 
+.project-img {
+    width: 2rem; height: 2rem;
+}
+
 .intro-img {
     width: 1.5rem; height: 1.5rem; margin-right: 8px;
 }

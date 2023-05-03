@@ -34,8 +34,8 @@ const Experience = () => {
 
     const Jobs = [
       makeJob('UIC Research Internship', 'Research Assistant', 'Chicago, Illinois', 'June 2023 - August 2023', rsrchBullets),
-      makeJob('Aldi', 'Sales Associate', 'Berwyn, Illinois', 'May 2023 - August 2022', aldiBullets),
-      makeJob('Tech Service', 'Computer Hardware Specialist', 'Cicero, Illinois', 'August 2022 - May 2022', TSIBullets),
+      makeJob('Aldi', 'Sales Associate', 'Berwyn, Illinois', 'May 2022 - August 2022', aldiBullets),
+      makeJob('Tech Service', 'Computer Hardware Specialist', 'Cicero, Illinois', 'August 2021 - May 2022', TSIBullets),
     ]
 
   return (

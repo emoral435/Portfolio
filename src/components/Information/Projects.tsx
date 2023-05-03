@@ -1,11 +1,23 @@
-import { Accordion, AccordionDetails, AccordionSummary, Typography } from '@mui/material';
+import { Accordion, AccordionDetails, AccordionSummary, Box, Typography } from '@mui/material';
 import PROJECTS from '/src/assets/projects.svg'
 import PROJECTSW from '/src/assets/projectsWhite.svg'
 import { useTheme } from '@emotion/react';
+import project from '/src/assets/project.svg'
+import folder from '/src/assets/folder.svg'
+import getStaticProps from '../../functions/getStaticProps';
+import { useEffect, useState } from 'react';
 
 
 const Projects = () => {
     const theme = useTheme()
+    const [projects, setProjects] = useState<any>([])
+
+    useEffect(() => {
+      getStaticProps()
+        .then((result:any) => {
+          setProjects(result.pinnedItems)
+        })
+    }, [])
 
     const projectsSrc = theme.palette.mode == 'light' ? PROJECTS : PROJECTSW
 
@@ -22,8 +34,11 @@ const Projects = () => {
         </AccordionSummary>
         <AccordionDetails>
           <Typography component={'div'}>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
-            malesuada lacus ex, sit amet blandit leo lobortis eget.
+            <Box className="grid-container grid-auto-fit">
+              {projects.length && projects.map((project : any) =>(
+                <div>hello</div>
+              ))}
+            </Box>
           </Typography>
         </AccordionDetails>
       </Accordion>

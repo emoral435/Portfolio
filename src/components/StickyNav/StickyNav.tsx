@@ -38,7 +38,7 @@ export function Home() {
       <List className="grid-container grid-auto-fit">
         {navItems.map((item) => (
           <ListItem key={item} disablePadding>
-            <a href={`#${item}`}>
+            <a href={item === 'Contact Me' ? 'mailto:emoral435@gmail.com' : `#${item}`} key={item}>
               <ListItemButton sx={{ textAlign: 'center' }}>
                 <ListItemText primary={item} />
               </ListItemButton>
