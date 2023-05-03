@@ -2,11 +2,9 @@ import { Accordion, AccordionDetails, AccordionSummary, Box, Typography } from '
 import PROJECTS from '/src/assets/projects.svg'
 import PROJECTSW from '/src/assets/projectsWhite.svg'
 import { useTheme } from '@emotion/react';
-import project from '/src/assets/project.svg'
-import folder from '/src/assets/folder.svg'
 import getStaticProps from '../../functions/getStaticProps';
 import { useEffect, useState } from 'react';
-
+import ProjectBox from '../Project/Project';
 
 const Projects = () => {
     const theme = useTheme()
@@ -34,11 +32,11 @@ const Projects = () => {
         </AccordionSummary>
         <AccordionDetails>
           <Typography component={'div'}>
-            <Box className="grid-container grid-auto-fit">
-              {projects.length && projects.map((project : any) =>(
-                <div>hello</div>
-              ))}
-            </Box>
+              <Box className="grid-container grid-project-fit" sx={{gap: '3rem', alignItems: 'center'}}>
+                {projects.length > 0 && projects.map((project : any) =>(
+                  <ProjectBox project={project} key={project.name} />
+                ))}
+              </Box>
           </Typography>
         </AccordionDetails>
       </Accordion>
