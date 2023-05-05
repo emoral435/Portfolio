@@ -1,7 +1,7 @@
 import { Accordion, AccordionDetails, AccordionSummary, Box, Typography } from '@mui/material'
 import exp from '/src/assets/exp.svg'
 import expW from '/src/assets/expWhite.svg'
-import { useTheme } from '@emotion/react'
+import { useTheme } from "@mui/material/styles";
 import Job from '../Job/Job'
 
 const makeJob = (co: string, title: string, loc: string, period: string, bullets: string[]) => {

@@ -1,7 +1,7 @@
 import Links from "../../Links/Links"
 import Typed from 'react-typed'
 import { Box } from "@mui/material"
-import { useTheme } from "@emotion/react"
+import { useTheme } from "@mui/material/styles";
 import CSLOGO from '/public/CSLOGO.svg'
 import FLAMES from '/src/assets/flames.svg'
 import PROFILE from '/src/assets/profilePic.png'

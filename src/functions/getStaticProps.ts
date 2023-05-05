@@ -59,7 +59,7 @@ export default async function getStaticProps() {
       })
 
       const { user } = data;
-      const pinnedItems = await user.pinnedItems.edges.map(edge => edge.node);
+      const pinnedItems = await user.pinnedItems.edges.map((edge : any) => edge.node);
       return {
           pinnedItems
       }

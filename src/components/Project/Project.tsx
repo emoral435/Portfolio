@@ -1,7 +1,7 @@
 import { Box } from "@mui/material"
 import projectImg from '/src/assets/project.svg'
 import folder from '/src/assets/folder.svg'
-import { useTheme } from '@emotion/react';
+import { useTheme } from "@mui/material/styles";
 import { useEffect, useState } from "react";
 import Badge from "../Badge/Badge";
 

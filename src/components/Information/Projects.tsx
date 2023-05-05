@@ -1,10 +1,10 @@
 import { Accordion, AccordionDetails, AccordionSummary, Box, Typography } from '@mui/material';
 import PROJECTS from '/src/assets/projects.svg'
 import PROJECTSW from '/src/assets/projectsWhite.svg'
-import { useTheme } from '@emotion/react';
 import getStaticProps from '../../functions/getStaticProps';
 import { useEffect, useState } from 'react';
 import ProjectBox from '../Project/Project';
+import { useTheme } from "@mui/material/styles";
 
 const Projects = () => {
     const theme = useTheme()
@@ -18,7 +18,7 @@ const Projects = () => {
     }, [])
 
     const projectsSrc = theme.palette.mode == 'light' ? PROJECTS : PROJECTSW
-
+    console.log(theme)
   return (
     <Accordion id='Projects' style={{ boxShadow: "none" }} >
         <AccordionSummary
