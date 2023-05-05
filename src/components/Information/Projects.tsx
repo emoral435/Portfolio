@@ -18,7 +18,6 @@ const Projects = () => {
     }, [])
 
     const projectsSrc = theme.palette.mode == 'light' ? PROJECTS : PROJECTSW
-    console.log(theme)
   return (
     <Accordion id='Projects' style={{ boxShadow: "none" }} >
         <AccordionSummary
