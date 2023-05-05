@@ -7,11 +7,12 @@ export default async function getStaticProps() {
         uri: 'https://api.github.com/graphql',
       });
       
+      console.log(import.meta.env.VITE_GH_KEY)
       const authLink = setContext((_, { headers }) => {
         return {
           headers: {
             ...headers,
-            authorization: `Bearer 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`,
+            authorization: `Bearer ${import.meta.env.VITE_GH_KEY}`,
           }
         }
       });
