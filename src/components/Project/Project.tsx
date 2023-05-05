@@ -34,8 +34,6 @@ const ProjectBox = ({project} : PropInterface) => {
         }
     }, [])
 
-  console.log(info)
-
   return (
     <Box key={info.name} sx={{display: 'flex', flexDirection: 'column', gap: '.5rem'}} className='project' >
         <section style={{display: 'flex', gap: '1rem'}}>
@@ -48,11 +46,13 @@ const ProjectBox = ({project} : PropInterface) => {
             </h4>
         </section>
         {technology.length > 0 && 
-            <section style={{color: '#d9b63c', display: 'flex', flexDirection: 'column'}} >
+            <section  style={{color: '#d9b63c', display: 'flex', flexDirection: 'column'}} >
                 <h3>Technologies</h3>
                 <Box className="grid-container grid-tech-fit" sx={{gap: '.3rem', alignItems: 'center', padding: '.5rem'}}>
                     {technology.map( (item : any) => (
-                        <Badge text={item.topic.name} color ={getDarkColor()} textColor={'white'} />
+                        <div key={item.topic.name} >
+                            <Badge text={item.topic.name} color ={getDarkColor()} textColor={'white'} />
+                        </div>
                     ))}
                 </Box>
             </section>
@@ -62,7 +62,9 @@ const ProjectBox = ({project} : PropInterface) => {
                 <h3>Languages</h3>
                 <Box className="grid-container grid-tech-fit" sx={{gap: '.3rem', alignItems: 'center', padding: '.5rem'}}>
                     {languages.map( (item : any) => (
-                        <Badge text={item.name} color ={item.color} textColor={'black'} />
+                        <div key={item.name} >
+                            <Badge  text={item.name} color ={item.color} textColor={'black'} />
+                        </div>
                     ))}
                 </Box>
             </section>
