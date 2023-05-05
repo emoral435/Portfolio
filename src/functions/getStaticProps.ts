@@ -12,7 +12,7 @@ export default async function getStaticProps() {
         return {
           headers: {
             ...headers,
-            authorization: `Bearer ${import.meta.env.VITE_GH_KEY}`,
+            authorization: `Bearer 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`,
           }
         }
       });
