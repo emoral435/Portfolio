@@ -11,7 +11,7 @@ const Footer = () => {
         "Why do fathers take an extra pair of socks when they go golfing? In case they get a hole in one!"
     ]
 
-    const navItems = ["Experience", "Projects", "Koalifications", "Contact Me"]
+    const navItems = ["Experience", "Projects", "Contact Me"]
 
   return (
     <Box component={'footer'} className="footer" sx={{flexDirection: {xs: 'column', md: 'row'}, justifyContent: 'center', alignItems: {xs: 'start', md: 'center'}, gap: {xs: 3, md: 8}}}>

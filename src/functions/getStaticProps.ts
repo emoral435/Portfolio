@@ -1,7 +1,6 @@
 import { ApolloClient, InMemoryCache, createHttpLink, gql } from '@apollo/client';
 import { setContext } from '@apollo/client/link/context';
 
-
 export default async function getStaticProps() {
     const httpLink = createHttpLink({
         uri: 'https://api.github.com/graphql',
