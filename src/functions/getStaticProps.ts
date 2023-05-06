@@ -5,8 +5,8 @@ export default async function getStaticProps() {
     const httpLink = createHttpLink({
         uri: 'https://api.github.com/graphql',
       });
-      
-      const key = process.env.GH_KEY
+
+      const key = import.meta.env.VITE_GH_KEY
       const authLink = setContext((_, { headers }) => {
         return {
           headers: {
