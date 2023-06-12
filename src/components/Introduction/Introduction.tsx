@@ -12,7 +12,7 @@ const theme = useTheme()
     const floatingText = "Hey there"
     const welcome = "My name is Eduardo, nice to meet you!"
     const interest = "I am interested in designing websites, apps, games, and overall enjoy development of any sort"
-    const position = "Research assistant @ University of Illinois Chicago"
+    const position = "Data Analyst Researcher @ University of Illinois Chicago"
     const major = "Computer Science"
     const uni = "University of Illinois Chicago"
 

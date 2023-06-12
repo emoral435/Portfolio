@@ -16,8 +16,7 @@ const Experience = () => {
     const expSrc = theme.palette.mode == 'light' ? exp : expW
 
     const rsrchBullets = [
-      'Researched ways to decrease load times using python',
-      'other bullet option'
+      'Used PyCharm and Pandas to analyze data over 3 decades to uncover a story behind patents and its relations to other prospects',
     ]
 
     const aldiBullets = [
@@ -33,7 +32,7 @@ const Experience = () => {
     ]
 
     const Jobs = [
-      makeJob('UIC Research Internship', 'Research Assistant', 'Chicago, Illinois', 'June 2023 - August 2023', rsrchBullets),
+      makeJob('Data Analyst Researched', 'Finding Impactful Innovation via AI Empowered by Text and Networks', 'Chicago, Illinois', 'June 2023 - August 2023', rsrchBullets),
       makeJob('Aldi', 'Sales Associate', 'Berwyn, Illinois', 'May 2022 - August 2022', aldiBullets),
       makeJob('Tech Service', 'Computer Hardware Specialist', 'Cicero, Illinois', 'August 2021 - May 2022', TSIBullets),
     ]
