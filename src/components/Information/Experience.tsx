@@ -15,8 +15,10 @@ const Experience = () => {
 
     const expSrc = theme.palette.mode == 'light' ? exp : expW
 
-    const rsrchBullets = [
-      'Used PyCharm and Pandas to analyze data over 3 decades to uncover a story behind patents and its relations to other prospects',
+    const dataInterBullets = [
+      'Analyzed data sets over 20 gigabytes cumulatively spanning over 3 decades to find relations in granted patents and job postings and social media trends',
+      'Utilized Jupyter Notebook to show with Seaborn/Matplotlib increasing numbers of granted patents positively affected the number of online job postings',
+      'Applied word embedding with Doc2Vec to check for positive trends between patent abstracts and career fields of online job postings'
     ]
 
     const aldiBullets = [
@@ -32,7 +34,7 @@ const Experience = () => {
     ]
 
     const Jobs = [
-      makeJob('Data Analyst Researched', 'Finding Impactful Innovation via AI Empowered by Text and Networks', 'Chicago, Illinois', 'June 2023 - August 2023', rsrchBullets),
+      makeJob('Data Analyst Intern', 'Finding Impactful Innovation via AI Empowered by Text and Networks', 'Chicago, Illinois', 'June 2023 - August 2023', dataInterBullets),
       makeJob('Aldi', 'Sales Associate', 'Berwyn, Illinois', 'May 2022 - August 2022', aldiBullets),
       makeJob('Tech Service', 'Computer Hardware Specialist', 'Cicero, Illinois', 'August 2021 - May 2022', TSIBullets),
     ]

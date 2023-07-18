@@ -4,15 +4,15 @@ import { Box } from "@mui/material"
 import { useTheme } from "@mui/material/styles";
 import CSLOGO from '/public/CSLOGO.svg'
 import FLAMES from '/src/assets/flames.svg'
-import PROFILE from '/src/assets/profilePic.png'
+import PROFILE from '/src/assets/profilePic.jpg'
 
 const Introduction = () => {
 const theme = useTheme()
 
     const floatingText = "Hey there"
     const welcome = "My name is Eduardo, nice to meet you!"
-    const interest = "I am interested in designing websites, apps, games, and overall enjoy development of any sort"
-    const position = "Data Analyst Researcher @ University of Illinois Chicago"
+    const interest = "I am interested in designing websites, apps, games, and overall enjoy development of any sort!"
+    const position = "Data Analyst Intern @ University of Illinois Chicago"
     const major = "Computer Science"
     const uni = "University of Illinois Chicago"
 

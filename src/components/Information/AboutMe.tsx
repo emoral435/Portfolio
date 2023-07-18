@@ -42,10 +42,10 @@ const AboutMe = () => {
         <AccordionDetails style={{ boxShadow: "none" }}>
         <Typography sx={{color: theme.palette.text.secondary, fontSize: '1.2rem'}} component={'div'}>
             <Box sx={{color: theme.palette.text.secondary, fontSize: {xs: '.8rem', md: '1rem'}, fontWeight: 600, display: 'flex', flexDirection: 'column', gap: 3}}>
-              <div>I discovered my passion for problem solving ever since I was little and tinkered with origami. The intricacies of origami and the problems
-                 that a simple sheet of paper can help me solve–such as making my own container to store paper clips–gave me lots of joy. Flash forward to today, and competing in hackathons like SparkHacks and hearing stories about the types of problems that 
+              <div>I discovered my passion for problem-solving ever since I was little discovered the art of origami. The intricacies of origami and the problems
+                 that a simple sheet of paper can help me solve–such as making my own container to store school supplies like paper clips–gave me lots of joy. Flash forward to today, and competing in hackathons like SparkHacks and hearing stories about the types of problems that 
               computer scientists can solve all lead me to studying computer science at the University of Illinois Chicago. I am interested in
-              making dynamic websites and mobile app development with Swift. </div>
+              making dynamic websites, mobile app development with Swift, and data analysis and NLP. </div>
               <div>I like building projects related to my toolkit that solves little problems around my life that I believe can be done more effectively. I also
               love trying new foods to eat around the city. I am also a google local tour, related to my food habits. In addition, I love to go to the gym, and love being outdoors.
               If you would like to know more about me, click on my resume below.</div>

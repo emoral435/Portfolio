@@ -31,5 +31,5 @@
 ## 🚨
 
 <p>
-  Built using the Github GraphQL API in order to automate getting the projects that I want to present! If you want to fork the project yourself, you are free to go ahead and fork it yourself, just remember to either credit me or toss me a coffee!
+  Built using the Github GraphQL API in order to automate getting the projects that I want to present! If you want to fork the project yourself, you are free to go ahead and fork it yourself, just remember to either credit me or if you want to help me out, send me a job application!
 </p>
