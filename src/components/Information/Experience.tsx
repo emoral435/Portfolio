@@ -15,10 +15,18 @@ const Experience = () => {
 
     const expSrc = theme.palette.mode == 'light' ? exp : expW
 
+    const enova = [
+      'Waiting to start!',
+    ]
+
+    const nextcloud = [
+      'Waiting to start!',
+    ]
+
     const dataInterBullets = [
-      'Analyzed data sets over 20 gigabytes cumulatively spanning over 3 decades to find relations in granted patents and job postings and social media trends',
-      'Utilized Jupyter Notebook to show with Seaborn/Matplotlib increasing numbers of granted patents positively affected the number of online job postings',
-      'Applied word embedding with Doc2Vec to check for positive trends between patent abstracts and career fields of online job postings'
+      'Examined 20 gigabytes of patent data sets spanning over 3 decades, finding relations in patents and job trends',
+      'Succeeded in finding the 10 most valued developer skills from online job posting documents',
+      'Showcased a 12 percent increase in similarities between job descriptions and patent details 2 years after being granted by applying SciKitLearn word embedding methods.'
     ]
 
     const aldiBullets = [
@@ -34,6 +42,8 @@ const Experience = () => {
     ]
 
     const Jobs = [
+      makeJob('Enova', 'Software Engineering Intern', 'Chicago, Illinois', 'June 2024 - August 2024', enova),
+      makeJob('Nextcloud', 'Student Software Engineering Intern', 'Stuttgart, Germany', 'November 2023 - May 2024', nextcloud),
       makeJob('Data Analyst Intern', 'Finding Impactful Innovation via AI Empowered by Text and Networks', 'Chicago, Illinois', 'June 2023 - August 2023', dataInterBullets),
       makeJob('Aldi', 'Sales Associate', 'Berwyn, Illinois', 'May 2022 - August 2022', aldiBullets),
       makeJob('Tech Service', 'Computer Hardware Specialist', 'Cicero, Illinois', 'August 2021 - May 2022', TSIBullets),
