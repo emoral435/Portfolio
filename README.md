@@ -1,3 +1,5 @@
+## VERSION 1.0.0 - NOW UNSUPPORTED
+
 <div align="center">
   <img alt="Logo" src="https://emoral435.github.io/images-repo/CSLOGO.svg" width="100" />
 </div>
@@ -10,21 +12,21 @@
 
 ![demo](https://emoral435.github.io/images-repo/portfolio-home.png)
 
-<h1 align="center">
+<h2 align="center">
   dark mode 🌙
-</h1>
+</h2>
 
 ![demo](https://emoral435.github.io/images-repo/portfolio-darkMode.png)
 
-<h1 align="center">
+<h2 align="center">
   mobile demo 📱
-</h1>
+</h2>
 
 ![demo](https://emoral435.github.io/images-repo/portfolio-mobile.png)
 
-<h1 align="center">
+<h2 align="center">
   projects demo 📱
-</h1>
+</h2>
 
 ![demo](https://emoral435.github.io/images-repo/portfolio-projects.png)
 
