@@ -1,6 +1,6 @@
 import { Box } from "@mui/material"
 import Links from "../Links/Links"
-import Typed from 'react-typed'
+import { ReactTyped } from "react-typed";
 
 const Footer = () => {
     const textLoop = [
@@ -30,7 +30,7 @@ const Footer = () => {
             ))}
         </Box>
         <Box sx={{color: '#d9b63c', fontSize: '1.5rem', width: '20rem', display: 'flex', alignItems: 'center', height: '6rem'}}>
-            <Typed strings={textLoop} typeSpeed={60} backSpeed={40} className="typed" loop />
+            <ReactTyped strings={textLoop} typeSpeed={60} backSpeed={40} className="typed" loop />
         </Box>
     </Box>
   )
