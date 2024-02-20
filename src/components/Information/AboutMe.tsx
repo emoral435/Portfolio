@@ -2,7 +2,7 @@ import { useTheme } from "@mui/material/styles";
 import { Accordion, AccordionDetails, AccordionSummary, Box, Typography, Button } from '@mui/material'
 import info from '/src/assets/info.svg'
 import infoW from '/src/assets/infoW.svg'
-import RESUME from '/src/Resume/EduardoMorales.pdf'
+import RESUME from '/src/resume/EduardoMorales.pdf'
 import ARROW from '/src/assets/arrowWhite.svg'
 
 const techStack = [

@@ -1,5 +1,5 @@
 import { Box } from "@mui/material"
-import Links from "../../Links/Links"
+import Links from "../Links/Links"
 import Typed from 'react-typed'
 
 const Footer = () => {
