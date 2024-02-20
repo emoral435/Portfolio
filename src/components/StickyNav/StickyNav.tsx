@@ -1,5 +1,5 @@
 import { useTheme } from "@mui/material"
-import { ColorModeContext } from "../../context/ColorContext/ColorContext"
+import { ColorModeContext } from "../../store/ColorContext/ColorContext"
 import { useContext } from "react"
 
 import AppBar from '@mui/material/AppBar';
