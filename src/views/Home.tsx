@@ -45,9 +45,9 @@ function App() {
       <StickyNav />
       <Box component="main" sx={{ p: 3 }} id="Home">
         <Toolbar />
-        <Box sx={{ marginTop: '5rem', display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', gap: {xs: '3rem',md: '5rem'}}} >
+        <Box sx={{ marginTop: '3.2rem', display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', gap: {xs: '3rem',md: '5rem'}}} >
           <Introduction />
-          <Information projects={projects}/>
+          <Information projects={projects} id="projects" />
         </Box>
       </Box>
       <Footer />

@@ -1,13 +1,8 @@
 import { Accordion, AccordionDetails, AccordionSummary, Box, Typography } from '@mui/material';
-import PROJECTS from '/src/assets/projects.svg'
-import PROJECTSW from '/src/assets/projectsWhite.svg'
+import AccountTreeIcon from '@mui/icons-material/AccountTree';
 import ProjectBox from '../Project/Project';
-import { useTheme } from "@mui/material/styles";
 
 const Projects = ({projects}:any) => {
-    const theme = useTheme()
-
-    const projectsSrc = theme.palette.mode == 'light' ? PROJECTS : PROJECTSW
   return (
     <Accordion id='Projects' style={{ boxShadow: "none" }} >
         <AccordionSummary
@@ -15,8 +10,9 @@ const Projects = ({projects}:any) => {
           sx={{display: 'flex', justifyContent: 'center'}}
         >
           <Typography component={'div'} sx={{ fontWeight: 700, fontSize: {xs: '1rem', md: '2rem'}, width: '100%', display: 'flex', justifyContent: 'center', alignItems: 'center', gap: 4}}>
+            <AccountTreeIcon sx={{ fontSize: 35 }} />
             <h2>Projects</h2>
-            <img src={projectsSrc} alt="" className='accordian-img'/>
+            <AccountTreeIcon sx={{ fontSize: 35 }} />
           </Typography>
         </AccordionSummary>
         <AccordionDetails>

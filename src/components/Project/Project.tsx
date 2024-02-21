@@ -1,6 +1,6 @@
 import { Box } from "@mui/material"
-import projectImg from '/src/assets/project.svg'
-import folder from '/src/assets/folder.svg'
+import ConstructionIcon from '@mui/icons-material/Construction';
+import FolderIcon from '@mui/icons-material/Folder';
 import { useTheme } from "@mui/material/styles";
 import { useEffect, useState } from "react";
 import Badge from "../Badge/Badge";
@@ -36,9 +36,10 @@ const ProjectBox = ({project} : PropInterface) => {
 
   return (
     <Box key={info.name} sx={{display: 'flex', flexDirection: 'column', gap: '.5rem'}} className='project' >
-        <section style={{display: 'flex', gap: '1rem'}}>
-            <img src={projectImg} alt="" className='project-img' />
+        <section style={{display: 'flex', gap: '1rem', justifyContent: "center"}}>
+            <ConstructionIcon />
             <h2 style={{color: theme.palette.text.primary }} className="project-name" >{info.name}</h2>
+            <ConstructionIcon />
         </section>
         <section style={{color: theme.palette.text.secondary }} >
             <h4 style={{textAlign: 'center'}}>
@@ -73,7 +74,7 @@ const ProjectBox = ({project} : PropInterface) => {
             <div className="folder" >
                 <a href={info.url} target="_blank" style={{gap: '.5rem', display: 'flex', alignItems: 'center'}}>
                     <h4>More info</h4>
-                    <img src={folder} alt="" className='project-img' />
+                    <FolderIcon />
                 </a>
             </div>
             <div className="flex-container" style={{gap: '1rem'}}>

@@ -1,14 +1,12 @@
 import { useTheme } from "@mui/material/styles";
 import { Accordion, AccordionDetails, AccordionSummary, Box, Typography, Button } from '@mui/material'
-import info from '/src/assets/info.svg'
-import infoW from '/src/assets/infoW.svg'
+import InfoIcon from '@mui/icons-material/Info';
 import RESUME from '/src/resume/EduardoMorales.pdf'
-import ARROW from '/src/assets/arrowWhite.svg'
+import KeyboardDoubleArrowRightIcon from '@mui/icons-material/KeyboardDoubleArrowRight'
+import KeyboardDoubleArrowLeftIcon from '@mui/icons-material/KeyboardDoubleArrowLeft'
 
 const AboutMe = () => {
     const theme = useTheme()
-
-    const aboutSrc = theme.palette.mode == 'light' ? info : infoW
 
   return (
     <Accordion id='About' style={{ boxShadow: "none" }}>
@@ -16,8 +14,9 @@ const AboutMe = () => {
           sx={{display: 'flex', justifyContent: 'center'}}
         >
           <Typography component={'div'} sx={{ fontWeight: 700, fontSize: {xs: '1rem', md: '2rem'}, width: '100%', display: 'flex', justifyContent: 'center', alignItems: 'center', gap: 4}}>
+            <InfoIcon sx={{ fontSize: 35 }} />
             <h2>About Me</h2>
-            <img src={aboutSrc} alt="" className='accordian-img' />
+            <InfoIcon sx={{ fontSize: 35 }} />
           </Typography>
         </AccordionSummary>
         <AccordionDetails style={{ boxShadow: "none" }}>
@@ -39,9 +38,9 @@ const AboutMe = () => {
               <Box sx={{display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'space-around', gap: 4}}>
                 <a href={RESUME} download="EduardoMorales.pdf">
                     <Button variant='contained' size='large' sx={{textTransform: 'none', padding: {xs: '1rem 1rem',md: '2rem 2rem'}, fontFamily: 'Poppins', borderRadius: '10px'}}>
-                      <img src={ARROW} alt="" className='arrow'/>
+                      <KeyboardDoubleArrowRightIcon />
                       <div>Download Resume</div>
-                      <img src={ARROW} alt="" className='arrow flip' />
+                      <KeyboardDoubleArrowLeftIcon />
                     </Button>
                 </a>
               </Box>

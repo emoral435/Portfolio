@@ -1,6 +1,5 @@
 import { Accordion, AccordionDetails, AccordionSummary, Box, Typography } from '@mui/material'
-import exp from '/src/assets/exp.svg'
-import expW from '/src/assets/expWhite.svg'
+import HomeRepairServiceIcon from '@mui/icons-material/HomeRepairService';
 import { useTheme } from "@mui/material/styles";
 import Job from '../Job/Job'
 
@@ -12,8 +11,6 @@ const makeJob = (co: string, title: string, loc: string, period: string, bullets
 
 const Experience = () => {
     const theme = useTheme()
-
-    const expSrc = theme.palette.mode == 'light' ? exp : expW
 
     const enova = [
       'Waiting to start!',
@@ -56,8 +53,9 @@ const Experience = () => {
           sx={{display: 'flex', justifyContent: 'center'}}
         >
           <Typography component={'div'} sx={{ fontWeight: 700, fontSize: {xs: '1rem', md: '2rem'}, width: '100%', display: 'flex', justifyContent: 'center', alignItems: 'center', gap: 4}}>
+            <HomeRepairServiceIcon sx={{ fontSize: 35 }} />
             <h2>Experience</h2>
-            <img src={expSrc} alt="" className='accordian-img' />
+            <HomeRepairServiceIcon sx={{ fontSize: 35 }} />
           </Typography>
         </AccordionSummary>
         <AccordionDetails>
