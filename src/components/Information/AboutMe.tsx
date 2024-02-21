@@ -6,9 +6,6 @@ import RESUME from '/src/resume/EduardoMorales.pdf'
 import ARROW from '/src/assets/arrowWhite.svg'
 
 const techStack = [
-  {num: '5+', desc: 'Programming Languages'},
-  {num: '8+', desc: 'Completed Github Projects'},
-  {num: '4+', desc: 'Frameworks and Libraries'},
   {num: '3+', desc: 'Previous Internships'}
 ]
 
@@ -18,17 +15,6 @@ const AboutMe = () => {
     const theme = useTheme()
 
     const aboutSrc = theme.palette.mode == 'light' ? info : infoW
-
-    const displayStacks = (
-      <Box sx={{display: 'flex', gap: 4}} component={'section'}>
-        {techStack.map((item) => (
-          <Box component={'section'} sx={{display: 'flex', flexDirection: 'column', maxWidth: 'min-content', alignItems: 'center'}} key={item.num}>
-            <div style={{color: theme.palette.text.primary, fontSize: '1.7rem'}}>{item.num}</div>
-            <div style={{textAlign: 'center'}}>{item.desc}</div>
-          </Box>
-        ))}
-      </Box>
-    )
 
   return (
     <Accordion id='About' style={{ boxShadow: "none" }}>
@@ -56,8 +42,7 @@ const AboutMe = () => {
               	love trying new foods to eat around the city. I am also a google local tour, related to my food habits. In addition, I love to go to the gym, and love being outdoors.
               	If you would like to know more about me, click on my resume below!
 			  </div>
-              <Box sx={{display: 'flex', flexDirection: {xs: 'column', md: 'row'}, alignItems: 'center', justifyContent: 'space-around', gap: 4}}>
-                {displayStacks}
+              <Box sx={{display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'space-around', gap: 4}}>
                 <a href={RESUME} download="EduardoMorales.pdf">
                     <Button variant='contained' size='large' sx={{textTransform: 'none', padding: {xs: '1rem 1rem',md: '2rem 2rem'}, fontFamily: 'Poppins', borderRadius: '10px'}}>
                       <img src={ARROW} alt="" className='arrow'/>

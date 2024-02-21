@@ -1,0 +1,12 @@
+#loading-modal {
+	opacity: 1;
+	-moz-transition: opacity 2s linear;
+	-o-transition: opacity 2s linear;
+	-webkit-transition: opacity 2s linear;
+	transition: opacity 2s linear;
+	border: 1px solid black;
+}
+
+#loading-modal .hidden {
+	opacity: 0;
+}
