@@ -5,12 +5,6 @@ import infoW from '/src/assets/infoW.svg'
 import RESUME from '/src/resume/EduardoMorales.pdf'
 import ARROW from '/src/assets/arrowWhite.svg'
 
-const techStack = [
-  {num: '3+', desc: 'Previous Internships'}
-]
-
-
-
 const AboutMe = () => {
     const theme = useTheme()
 
