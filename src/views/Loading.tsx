@@ -1,5 +1,4 @@
 import { Box, LinearProgress } from "@mui/material"
-import "./Loading.css"
 
 const Loading = () => {
 	return (

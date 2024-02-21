@@ -1,4 +1,4 @@
-import { Box, Toolbar, CircularProgress } from "@mui/material"
+import { Box, Toolbar } from "@mui/material"
 import StickyNav from "../components/StickyNav/StickyNav"
 import Introduction from "../components/Introduction/Introduction"
 import Information from "../components/Information/Information"
