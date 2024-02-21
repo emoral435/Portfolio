@@ -25,7 +25,7 @@ const theme = useTheme()
             </Box>
         </Box>
         <Box component={'section'} sx={{maxWidth: 'min-content'}}>
-            <Box sx={{paddingLeft: 3 ,textAlign: 'center', whiteSpace: 'nowrap' ,fontWeight: 700 ,fontSize: {xs: '3.7rem',sm: '4.5rem', md: '7rem'}}}>
+            <Box sx={{paddingLeft: 3 ,textAlign: 'center', whiteSpace: 'nowrap' ,fontWeight: 700 ,fontSize: {xs: '3.7rem',sm: '4.5rem', md: '6.5rem'}}}>
                 <ReactTyped strings={[floatingText]} typeSpeed={110} className="typed" />
             </Box>
             <Box component={'h2'} sx={{textAlign: 'center' ,color: theme.palette.text.secondary, fontWeight: 700, fontSize: {xs: '1rem', sm: '1.22rem', md: '1.7rem'}}}>

@@ -1,21 +1,11 @@
 import { Accordion, AccordionDetails, AccordionSummary, Box, Typography } from '@mui/material';
 import PROJECTS from '/src/assets/projects.svg'
 import PROJECTSW from '/src/assets/projectsWhite.svg'
-import getStaticProps from '../../services/getStaticProps';
-import { useEffect, useState } from 'react';
 import ProjectBox from '../Project/Project';
 import { useTheme } from "@mui/material/styles";
 
-const Projects = () => {
+const Projects = ({projects}:any) => {
     const theme = useTheme()
-    const [projects, setProjects] = useState<any>([])
-
-    useEffect(() => {
-      getStaticProps()
-        .then((result:any) => {
-          setProjects(result.pinnedItems)
-        })
-    }, [])
 
     const projectsSrc = theme.palette.mode == 'light' ? PROJECTS : PROJECTSW
   return (
@@ -31,11 +21,15 @@ const Projects = () => {
         </AccordionSummary>
         <AccordionDetails>
           <Typography component={'div'}>
-              <Box className="grid-container grid-project-fit" sx={{gap: '3rem', alignItems: 'center'}}>
-                {projects.length > 0 && projects.map((project : any) =>(
-                  <ProjectBox project={project} key={project.name} />
-                ))}
-              </Box>
+			  {
+				projects ?
+					<Box className="grid-container grid-project-fit" sx={{gap: '3rem', alignItems: 'center'}}>
+						{projects.length > 0 && projects.map((project : any) =>(
+						<ProjectBox project={project} key={project.name} />
+						))}
+					</Box>
+				: <div></div>
+			  }
           </Typography>
         </AccordionDetails>
       </Accordion>
