@@ -6,13 +6,15 @@ import { useEffect, useState } from 'react';
 import ProjectBox from '../Project/Project';
 import { useTheme } from "@mui/material/styles";
 
-const Projects = () => {
+const Projects = ({setIsLoading}:any) => {
     const theme = useTheme()
     const [projects, setProjects] = useState<any>([])
 
     useEffect(() => {
       getStaticProps()
         .then((result:any) => {
+          console.log("WHAT")
+          setIsLoading(false)
           setProjects(result.pinnedItems)
         })
     }, [])
