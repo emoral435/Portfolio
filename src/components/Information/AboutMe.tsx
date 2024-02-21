@@ -1,14 +1,11 @@
 import { useTheme } from "@mui/material/styles";
 import { Accordion, AccordionDetails, AccordionSummary, Box, Typography, Button } from '@mui/material'
-import info from '/src/assets/info.svg'
-import infoW from '/src/assets/infoW.svg'
+import InfoIcon from '@mui/icons-material/Info';
 import RESUME from '/src/resume/EduardoMorales.pdf'
 import ARROW from '/src/assets/arrowWhite.svg'
 
 const AboutMe = () => {
     const theme = useTheme()
-
-    const aboutSrc = theme.palette.mode == 'light' ? info : infoW
 
   return (
     <Accordion id='About' style={{ boxShadow: "none" }}>
@@ -16,8 +13,9 @@ const AboutMe = () => {
           sx={{display: 'flex', justifyContent: 'center'}}
         >
           <Typography component={'div'} sx={{ fontWeight: 700, fontSize: {xs: '1rem', md: '2rem'}, width: '100%', display: 'flex', justifyContent: 'center', alignItems: 'center', gap: 4}}>
+            <InfoIcon sx={{ fontSize: 35 }} />
             <h2>About Me</h2>
-            <img src={aboutSrc} alt="" className='accordian-img' />
+            <InfoIcon sx={{ fontSize: 35 }} />
           </Typography>
         </AccordionSummary>
         <AccordionDetails style={{ boxShadow: "none" }}>

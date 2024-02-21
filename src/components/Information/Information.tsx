@@ -9,7 +9,7 @@ export default function Information({ projects } : any) {
 
   return (
     <Box component={'div'} sx={{width: {xs: '100%', lg: '80rem'}}}>
-      <Box sx={{p: 1}}>
+      <Box sx={{p: 1, boxShadow: "0 3px 10px rgb(0 0 0 / 0.2)"}}>
           <AboutMe />
           <Experience />
           <Projects projects={projects}/>

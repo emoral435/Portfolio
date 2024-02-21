@@ -14,7 +14,7 @@ const theme = useTheme()
     <Box component={'section'} sx={{ display: 'flex', flexDirection: {xs: 'column', md: 'row'}, gap: {xs: 2, md: 15}, justifyContent: 'center', alignItems: 'center' }}>
         <Box component={'section'} sx={{display: 'flex', gap: {xs: '1rem', md:'3rem'}}}>
             <Links inFooter={false}/>
-            <Box sx={{width: {xs: '15rem', md: '17rem', lg: '25rem'}, height: {xs: '15rem', md: '17rem', lg: '25rem'}}}>
+            <Box sx={{width: {xs: '15rem', md: '17rem', lg: '25rem'}, height: {xs: '15rem', md: '17rem', lg: '25rem'}, borderRadius: "15px", boxShadow: "5px 10px 20px rgb(0 0 0 / 0.5)"}}>
                 <img src={PROFILEGIF} alt="" className="profile-pic"/>
             </Box>
         </Box>

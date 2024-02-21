@@ -15,7 +15,7 @@ const Footer = () => {
 
   return (
     <Box component={'footer'} className="footer" sx={{flexDirection: {xs: 'column', md: 'row'}, justifyContent: 'center', alignItems: {xs: 'start', md: 'center'}, gap: {xs: 3, md: 8}}}>
-        <Links whiteMode={true} />
+        <Links inFooter={true} />
         <Box component={'h2'}>
             <Box component={'p'} sx={{fontSize: {xs: '2rem', md:'3rem'}}}>Eduardo</Box>
             <Box component={'p'} sx={{fontSize: {xs: '.9rem', md:'1.3rem'}}}>Computer Scientist</Box >
