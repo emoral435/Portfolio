@@ -2,7 +2,8 @@ import { useTheme } from "@mui/material/styles";
 import { Accordion, AccordionDetails, AccordionSummary, Box, Typography, Button } from '@mui/material'
 import InfoIcon from '@mui/icons-material/Info';
 import RESUME from '/src/resume/EduardoMorales.pdf'
-import ARROW from '/src/assets/arrowWhite.svg'
+import KeyboardDoubleArrowRightIcon from '@mui/icons-material/KeyboardDoubleArrowRight'
+import KeyboardDoubleArrowLeftIcon from '@mui/icons-material/KeyboardDoubleArrowLeft'
 
 const AboutMe = () => {
     const theme = useTheme()
@@ -37,9 +38,9 @@ const AboutMe = () => {
               <Box sx={{display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'space-around', gap: 4}}>
                 <a href={RESUME} download="EduardoMorales.pdf">
                     <Button variant='contained' size='large' sx={{textTransform: 'none', padding: {xs: '1rem 1rem',md: '2rem 2rem'}, fontFamily: 'Poppins', borderRadius: '10px'}}>
-                      <img src={ARROW} alt="" className='arrow'/>
+                      <KeyboardDoubleArrowRightIcon />
                       <div>Download Resume</div>
-                      <img src={ARROW} alt="" className='arrow flip' />
+                      <KeyboardDoubleArrowLeftIcon />
                     </Button>
                 </a>
               </Box>

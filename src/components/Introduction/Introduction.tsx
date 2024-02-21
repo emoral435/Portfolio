@@ -2,8 +2,9 @@ import Links from "../Links/Links"
 import { ReactTyped } from "react-typed";
 import { Box } from "@mui/material"
 import { useTheme } from "@mui/material/styles";
-import CSLOGO from '/public/CSLOGO.svg'
-import FLAMES from '/src/assets/flames.svg'
+import CodeIcon from '@mui/icons-material/Code';
+import LocalFireDepartmentIcon from '@mui/icons-material/LocalFireDepartment';
+import CloudIcon from '@mui/icons-material/Cloud';
 import PROFILEGIF from '/src/assets/profileGif.gif'
 import { introInfo } from "../../services/constants";
 
@@ -28,18 +29,22 @@ const theme = useTheme()
             <Box component={'h2'} sx={{margin: '1rem' , textAlign: 'center' ,color: theme.palette.text.secondary, fontWeight: 700, fontSize: {xs: '1rem', sm: '1.22rem', md: '1.7rem'}}}>
              	{introInfo.interest}
             </Box>
-            <Box component={'h2'} sx={{ display: 'flex', flexDirection: 'column', gap: 1 ,color: theme.palette.text.secondary, fontSize: {xs: '.6rem' ,sm: '1rem', md: '1.1rem'}}}>
-                <Box component={'div'} sx={{display: 'flex', gap: '6px', justifyContent: 'space-around', alignItems: 'center'}}>
-                    <Box component={'h3'}>{introInfo.position}</Box>
+            <Box component={'h2'} sx={{ display: 'flex', flexDirection: 'column', gap: 1 ,color: theme.palette.text.secondary, fontSize: {xs: '.9rem', sm: '1rem', md: '1.1rem'}}}>
+                <Box component={'div'} sx={{display: 'flex', gap: '12px', justifyContent: 'center', alignItems: 'center'}}>
+					<CloudIcon sx={{ color: "#4086f4" }} />
+                    <Box sx={{ textAlign: "center" }} >{introInfo.position}</Box>
+					<CloudIcon sx={{ color: "#4086f4" }} />
                 </Box>
-                <Box component={'div'} sx={{display: 'flex', flexDirection: {xs: 'column', md: 'row'}, gap: '6px', justifyContent: 'center', alignItems: 'center', whiteSpace: 'nowrap'}}>
-                    <Box className="intro-img-container" >
-                        <img src={CSLOGO} alt="" className="intro-img" />
-                        <Box component={'h3'}>{introInfo.major}</Box>
+                <Box component={'div'} sx={{display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', whiteSpace: 'nowrap'}}>
+                    <Box className="intro-img-container" sx={{ gap: '12px' }} >
+                        <CodeIcon sx={{fontSize: 30, color: '#069e57'}} />
+                        <Box component={'h3'}>{introInfo.major} Major</Box>
+                        <CodeIcon sx={{fontSize: 30, color: '#069e57'}} />
                     </Box>
-                    <Box className="intro-img-container" >
-                        <img src={FLAMES} alt="" className="intro-img"/>
+                    <Box className="intro-img-container"  sx={{ gap: '12px'}}>
+                        <LocalFireDepartmentIcon sx={{fontSize: 30, color: '#dc4234'}} />
                         <Box component={'h3'}>{introInfo.uni}</Box>
+                        <LocalFireDepartmentIcon sx={{fontSize: 30, color: '#dc4234'}} />
                     </Box>
                 </Box>
             </Box>

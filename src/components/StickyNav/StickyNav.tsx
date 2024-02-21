@@ -14,12 +14,10 @@ import ListItemText from '@mui/material/ListItemText';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import { useState } from "react";
-import arrow from '/src/assets/arrow.svg'
-import arrowWhite from '/src/assets/arrowWhite.svg'
-import mobileNav from '/src/assets/mobileNav.svg'
-import mobileNavWhite from '/src/assets/mobileNavWhite.svg'
-import nightMode from '/src/assets/nightMode.svg'
-import lightMode from '/src/assets/lightMode.svg'
+import KeyboardDoubleArrowRightIcon from '@mui/icons-material/KeyboardDoubleArrowRight'
+import KeyboardDoubleArrowLeftIcon from '@mui/icons-material/KeyboardDoubleArrowLeft'
+import DarkModeIcon from '@mui/icons-material/DarkMode';
+import LightModeIcon from '@mui/icons-material/LightMode';
 
 const drawerHeight = '100%';
 const navItems = ['Home', 'About', 'Experience', 'Projects', 'Contact Me'];
@@ -61,7 +59,6 @@ export function Home() {
             onClick={handleDrawerToggle}
             sx={{ mr: 2, display: { md: 'none' } }}
           >
-            {theme.palette.mode === 'light' ? <img src={mobileNav} alt="" className="arrow" /> : <img src={mobileNavWhite} alt='' className="arrow" />}
           </IconButton>
           <Typography
             
@@ -83,13 +80,13 @@ export function Home() {
                 ))}
               </Box>
             <button className="button nav-btn" onClick={colorMode.toggleColorMode} style={{display: 'flex', flexDirection: 'column', alignItems: 'center'}}>
-                {theme.palette.mode === 'dark' ? <img src={lightMode} alt="" className="arrow"/>  : <img src={nightMode} alt="" className="arrow"/>}
+                {theme.palette.mode === 'dark' ? <LightModeIcon />  : <DarkModeIcon />}
                 <section style={{display: 'flex', alignItems: 'center'}}>
-                    {theme.palette.mode === 'dark' ? <img src={arrowWhite} alt="" className="arrow"/>  : <img src={arrow} alt="" className="arrow"/>}
+                    <KeyboardDoubleArrowRightIcon />
                     <h6 style={{fontWeight: 'bold', fontFamily: 'Poppins', fontSize: 'large' }} >Dark Mode</h6>
-                    {theme.palette.mode === 'dark' ? <img src={arrowWhite} alt="" className="arrow flip" /> : <img src={arrow} alt="" className="arrow flip" />} 
+                    <KeyboardDoubleArrowLeftIcon />
                 </section>
-                {theme.palette.mode === 'dark' ? <img src={lightMode} alt="" className="arrow"/>  : <img src={nightMode} alt="" className="arrow"/>}
+                {theme.palette.mode === 'dark' ? <LightModeIcon />  : <DarkModeIcon />}
             </button>
           </section>
         </Toolbar>

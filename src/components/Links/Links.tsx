@@ -3,7 +3,7 @@ import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import GitHubIcon from '@mui/icons-material/GitHub';
 import ReplyIcon from '@mui/icons-material/Reply';
 import AccountTreeIcon from '@mui/icons-material/AccountTree';
-import { useTheme } from "@emotion/react";
+import { useTheme } from "@mui/material/styles";
 interface Props {
   inFooter: boolean
 }

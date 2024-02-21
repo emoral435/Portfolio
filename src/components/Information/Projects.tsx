@@ -1,11 +1,8 @@
 import { Accordion, AccordionDetails, AccordionSummary, Box, Typography } from '@mui/material';
 import AccountTreeIcon from '@mui/icons-material/AccountTree';
 import ProjectBox from '../Project/Project';
-import { useTheme } from "@mui/material/styles";
 
 const Projects = ({projects}:any) => {
-    const theme = useTheme()
-	
   return (
     <Accordion id='Projects' style={{ boxShadow: "none" }} >
         <AccordionSummary
