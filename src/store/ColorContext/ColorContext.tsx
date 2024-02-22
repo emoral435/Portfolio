@@ -12,6 +12,7 @@ export const ToggleDarkMode = ({ children } : Children) => {
     let defaultColorMode = "dark"
 
     useEffect(() => {
+        // https://stackoverflow.com/questions/56393880/how-do-i-detect-dark-mode-using-javascript
         window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', event => {
             defaultColorMode = event.matches ? "dark" : "light";
         });
