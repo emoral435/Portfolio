@@ -83,7 +83,12 @@ export function Home() {
                 {theme.palette.mode === 'dark' ? <LightModeIcon />  : <DarkModeIcon />}
                 <section style={{display: 'flex', alignItems: 'center'}}>
                     <KeyboardDoubleArrowRightIcon />
-                    <h6 style={{fontWeight: 'bold', fontFamily: 'Poppins', fontSize: 'large' }} >Dark Mode</h6>
+                    {
+                      theme.palette.mode == "dark"
+                      ? <h6 style={{fontWeight: 'bold', fontFamily: 'Poppins', fontSize: 'large' }} >Light mode</h6>
+                      : <h6 style={{fontWeight: 'bold', fontFamily: 'Poppins', fontSize: 'large' }} >Dark mode</h6>
+                    }
+                    
                     <KeyboardDoubleArrowLeftIcon />
                 </section>
                 {theme.palette.mode === 'dark' ? <LightModeIcon />  : <DarkModeIcon />}
