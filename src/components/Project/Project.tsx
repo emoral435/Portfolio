@@ -21,29 +21,31 @@ interface PropInterface {
 
 const ProjectBox = ({project} : PropInterface) => {
   const theme = useTheme()
-  const info = project
+  project
     const [technology, setTechnologies] = useState<any>([])
     const [languages, setLanguage] = useState<any>([])
 
+    console.log(project)
+
     useEffect(() => {
-        if (info.repositoryTopics.nodes.length) {
-            setTechnologies(info.repositoryTopics.nodes)
+        if (project.repositoryTopics.nodes.length) {
+            setTechnologies(project.repositoryTopics.nodes)
         }
-        if (info.languages.nodes.length) {
-            setLanguage(info.languages.nodes)
+        if (project.languages.nodes.length) {
+            setLanguage(project.languages.nodes)
         }
     }, [])
 
   return (
-    <Box key={info.name} sx={{display: 'flex', flexDirection: 'column', gap: '.5rem'}} className='project' >
+    <Box key={project.name} sx={{display: 'flex', flexDirection: 'column', gap: '.5rem'}} className='project' >
         <section style={{display: 'flex', gap: '1rem', justifyContent: "center"}}>
             <ConstructionIcon />
-            <h2 style={{color: theme.palette.text.primary }} className="project-name" >{info.name}</h2>
+            <h2 style={{color: theme.palette.text.primary }} className="project-name" >{project.name}</h2>
             <ConstructionIcon />
         </section>
         <section style={{color: theme.palette.text.secondary }} >
             <h4 style={{textAlign: 'center'}}>
-                {info.description}
+                {project.description}
             </h4>
         </section>
         {technology.length > 0 && 
@@ -72,14 +74,14 @@ const ProjectBox = ({project} : PropInterface) => {
         }
         <section style={{display: 'flex', justifyContent: 'space-between', color: '#3f50b5', alignItems: 'center'}} >
             <div className="folder" >
-                <a href={info.url} target="_blank" style={{gap: '.5rem', display: 'flex', alignItems: 'center'}}>
+                <a href={project.url} target="_blank" style={{gap: '.5rem', display: 'flex', alignItems: 'center'}}>
                     <h4>More info</h4>
                     <FolderIcon />
                 </a>
             </div>
             <div className="flex-container" style={{gap: '1rem'}}>
                 <div>⭐</div>
-                <h3>{info.stargazerCount}</h3>
+                <h3>{project.stargazerCount}</h3>
             </div>
         </section>
     </Box>
