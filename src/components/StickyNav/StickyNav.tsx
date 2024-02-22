@@ -1,6 +1,6 @@
 import { useTheme } from "@mui/material"
 import { ColorModeContext } from "../../store/ColorContext/ColorContext"
-import { useContext } from "react"
+import { useContext, useEffect } from "react"
 
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
@@ -23,13 +23,18 @@ const drawerHeight = '100%';
 const navItems = ['Home', 'About', 'Experience', 'Projects', 'Contact Me'];
 
 export function Home() {
-  const [mobileOpen, setMobileOpen] = useState(false);
   const theme = useTheme()
+  const [mobileOpen, setMobileOpen] = useState(false);
+  const [colorText, setColorText] = useState(theme.palette.mode === "dark" ? "Light mode" : "Dark mode");
   const colorMode = useContext(ColorModeContext)
 
   const handleDrawerToggle = () => {
     setMobileOpen((prevState) => !prevState);
   };
+
+  useEffect(() => {
+    setColorText(theme.palette.mode === "dark" ? "Light mode" : "Dark mode")
+  }, [theme.palette.mode])
 
   const drawer = (
     <Box onClick={handleDrawerToggle} sx={{ textAlign: 'center', width: '100%' }}>
@@ -83,12 +88,7 @@ export function Home() {
                 {theme.palette.mode === 'dark' ? <LightModeIcon />  : <DarkModeIcon />}
                 <section style={{display: 'flex', alignItems: 'center'}}>
                     <KeyboardDoubleArrowRightIcon />
-                    {
-                      theme.palette.mode == "dark"
-                      ? <h6 style={{fontWeight: 'bold', fontFamily: 'Poppins', fontSize: 'large' }} >Light mode</h6>
-                      : <h6 style={{fontWeight: 'bold', fontFamily: 'Poppins', fontSize: 'large' }} >Dark mode</h6>
-                    }
-                    
+                      : <h6 style={{fontWeight: 'bold', fontFamily: 'Poppins', fontSize: 'large' }} >{colorText}</h6>
                     <KeyboardDoubleArrowLeftIcon />
                 </section>
                 {theme.palette.mode === 'dark' ? <LightModeIcon />  : <DarkModeIcon />}

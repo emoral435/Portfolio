@@ -1,5 +1,5 @@
 import { createTheme, ThemeProvider } from "@mui/material";
-import { ReactElement, createContext, useMemo, useState } from "react";
+import { ReactElement, createContext, useMemo, useState, useEffect } from "react";
 
 
 interface Children {
@@ -9,12 +9,20 @@ interface Children {
 export const ColorModeContext = createContext({ toggleColorMode: () => {}})
 
 export const ToggleDarkMode = ({ children } : Children) => {
-    const [mode, setMode] = useState<'dark' | 'light'>('light')
+    let defaultColorMode = "dark"
 
+    useEffect(() => {
+        // https://stackoverflow.com/questions/56393880/how-do-i-detect-dark-mode-using-javascript
+        window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', event => {
+            defaultColorMode = event.matches ? "dark" : "light";
+        });
+    }, [])
+    
+    const [mode, setMode] = useState<any>(defaultColorMode)
     const colorMode = useMemo(
         () => ({
             toggleColorMode: () => {
-                setMode((prevMode) => (prevMode === 'light') ? 'dark' : 'light')
+                setMode((prevMode: string) => (prevMode === 'light') ? 'dark' : 'light')
             }
         }), [],
     )
