@@ -5,12 +5,14 @@ import { useContext, useEffect } from "react"
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
 import CssBaseline from '@mui/material/CssBaseline';
+import Divider from '@mui/material/Divider';
 import Drawer from '@mui/material/Drawer';
 import IconButton from '@mui/material/IconButton';
 import List from '@mui/material/List';
 import ListItem from '@mui/material/ListItem';
 import ListItemButton from '@mui/material/ListItemButton';
 import ListItemText from '@mui/material/ListItemText';
+import MenuIcon from '@mui/icons-material/Menu';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import { useState } from "react";
@@ -19,9 +21,8 @@ import KeyboardDoubleArrowLeftIcon from '@mui/icons-material/KeyboardDoubleArrow
 import DarkModeIcon from '@mui/icons-material/DarkMode';
 import LightModeIcon from '@mui/icons-material/LightMode';
 
-const drawerHeight = '100%';
+const drawerWidth = '100%';
 const navItems = ['Home', 'About', 'Experience', 'Projects', 'Contact Me'];
-
 export function Home() {
   const theme = useTheme()
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -37,8 +38,12 @@ export function Home() {
   }, [theme.palette.mode])
 
   const drawer = (
-    <Box onClick={handleDrawerToggle} sx={{ textAlign: 'center', width: '100%' }}>
-      <List className="grid-container grid-auto-fit">
+    <Box onClick={handleDrawerToggle} sx={{ textAlign: 'center' }}>
+      <Typography variant="h6" sx={{ my: 2 }}>
+        Eduardo Morales
+      </Typography>
+      <Divider />
+      <List>
         {navItems.map((item) => (
           <ListItem key={item} disablePadding>
             <a href={item === 'Contact Me' ? 'mailto:emoral435@gmail.com' : `#${item}`} key={item}>
@@ -53,7 +58,7 @@ export function Home() {
   );
 
   return (
-    <Box sx={{ display: 'flex', maxHeight: 'min-content' }}>
+    <Box sx={{ display: 'flex', maxHeight: 'min-content', justifyContent: 'space-around' }}>
       <CssBaseline />
       <AppBar component="nav" sx={{ background: theme.palette.background.default, color: theme.palette.text.primary, boxShadow: 'none' }}>
         <Toolbar sx={{ display: 'flex', justifyContent: 'space-around', gap: '2rem' }}>
@@ -62,14 +67,15 @@ export function Home() {
             aria-label="open drawer"
             edge="start"
             onClick={handleDrawerToggle}
-            sx={{ mr: 2, display: { md: 'none' } }}
+            sx={{ mr: 2, display: { sm: 'none' } }}
           >
+			<MenuIcon />
           </IconButton>
           <Typography
             
             variant="h6"
             component="div"
-            sx={{ fontWeight: 'bold', fontFamily: 'Poppins' }}
+            sx={{ fontWeight: 'bold', fontFamily: 'Poppins', flexGrow: 1, display: { xs: 'none', sm: 'block' } }}
             className="name"
           >
             <a href="#">Eduardo Morales</a>
@@ -96,25 +102,24 @@ export function Home() {
           </section>
         </Toolbar>
       </AppBar>
-      <Box component="nav">
-        <Drawer
-          anchor="top"
-          variant="temporary"
-          open={mobileOpen}
-          onClose={handleDrawerToggle}
-          ModalProps={{
-            keepMounted: true, // Better open performance on mobile.
-          }}
-          sx={{
-            display: { xs: 'block', md: 'none' },
-            '& .MuiDrawer-paper': { boxSizing: 'border-box', width: drawerHeight },
-          }}
-        >
-          {drawer}
-        </Drawer>
-      </Box>
-    </Box>
-  );
-}
+      <nav>
+		<Drawer
+			variant="temporary"
+			anchor="top"
+			open={mobileOpen}
+			onClose={handleDrawerToggle}
+			ModalProps={{
+				keepMounted: true, // Better open performance on mobile.
+			}}
+			sx={{
+				display: { xs: 'flex', sm: 'none' },
+				'& .MuiDrawer-paper': { boxSizing: 'border-box', width: drawerWidth },
+			}}
+			>
+			{drawer}
+		</Drawer>
+      </nav>
+	</Box>
+  )};
 
 export default Home
