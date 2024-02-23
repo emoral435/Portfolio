@@ -9,7 +9,7 @@ interface PropInterface {
 
 const Badge = ({text, color, textColor} : PropInterface) => {
   return (
-    <Box sx={{backgroundColor: color, maxWidth: 'min-content', fontSize: {xs: '.7rem', sm: '.85rem', color: textColor}}} className="badge">{text}</Box>
+    <Box sx={{backgroundColor: color, width: '100%', whiteSpace: "nowrap", overflow: "hidden", fontSize: {xs: '.6rem', sm: '.85rem', color: textColor}}} className="badge">{text}</Box>
   )
 }
 
