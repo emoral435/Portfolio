@@ -1,6 +1,7 @@
 import { Box, Divider, useTheme } from "@mui/material"
+import { Company } from "../../services/ExperienceService"
 
-const Job = (position: any) => {
+const Job = (position: Company) => {
     const job = position.position
     const theme = useTheme()
   return (
