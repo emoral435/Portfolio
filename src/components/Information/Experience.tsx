@@ -7,7 +7,7 @@ import { Company, myExperience } from '../../services/ExperienceService';
 
 const Experience = () => {
   const theme = useTheme()
-
+	console.log(myExperience)
   return (
     <Accordion id='Experience' style={{ boxShadow: "none" }} >
         <AccordionSummary
@@ -25,7 +25,7 @@ const Experience = () => {
             <Box component={'div'} sx={{color: theme.palette.text.secondary, fontSize: {xs: '.8rem', md: '1rem'}, fontWeight: 600, display: 'flex', flexDirection: 'column', gap: 3}}>
               {myExperience.map((job: Company) => (
                 <section key={job.name}>
-                  <Job company={job} />
+                  <Job position={job} />
                 </section>
               ))}
             </Box>
