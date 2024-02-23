@@ -2,34 +2,24 @@
   <img alt="Logo" src="https://emoral435.github.io/images-repo/CSLOGO.svg" width="100" />
 </div>
 <h1 align="center">
-  moraleseduardo.com - V1
+  moraleseduardo.com - v2.0.0
 </h1>
 <p align="center">
-  The first iteration of <a href="https://www.moraleseduardo.com/" target="_blank">moraleseduardo.com</a> built with <a href="https://vitejs.dev/" target="_blank">Vite</a> and hosted with <a href="https://vercel.com/" target="_blank">Vercel</a>
+  Serving as the second iteration of <a href="https://www.moraleseduardo.com/" target="_blank">moraleseduardo.com</a> built with <a href="https://vitejs.dev/" target="_blank">Vite</a> and hosted with <a href="https://vercel.com/" target="_blank">Vercel</a>
 </p>
 
-![demo](https://emoral435.github.io/images-repo/portfolio-home.png)
+<a href="https://www.moraleseduardo.com/" target="_blank" align="center">
+  DEMO
+</a href="">
 
-<h1 align="center">
-  dark mode 🌙
-</h1>
+## 🚨 COOL!
+* This project was built with Github's GraphQL API that serves information regarding my public repositories. Instead of having to manually update my project section here every time,
+this project automatically requests to get information on my 6 pinned repositories! Isn't that neat? Just me? Okay...
+* This project also fully supports dark and light mode (to save your eyes of light mode...) and detects your system preferences to make the default mode reflect your system settings!
+* Also mobile friendly 😀
 
-![demo](https://emoral435.github.io/images-repo/portfolio-darkMode.png)
+## 🌙 VIEW 🌙
+<img alt="Logo" src="https://emoral435.github.io/images-repo/v2-chosecase-img.png" width="1000px" height="auto" />
 
-<h1 align="center">
-  mobile demo 📱
-</h1>
-
-![demo](https://emoral435.github.io/images-repo/portfolio-mobile.png)
-
-<h1 align="center">
-  projects demo 📱
-</h1>
-
-![demo](https://emoral435.github.io/images-repo/portfolio-projects.png)
-
-## 🚨
-
-<p>
-  Built using the Github GraphQL API in order to automate getting the projects that I want to present! If you want to fork the project yourself, you are free to go ahead and fork it yourself, just remember to either credit me or if you want to help me out, send me a job application!
-</p>
+## AND FINALLY...
+Thank you for checking out this repository :) Always looking to improving this, so if you have any feedback, make an issue and I will work on it! Perhaps it might even be the reason we go to the next semenatic versioning 👀
