@@ -25,9 +25,8 @@ const ProjectBox = ({project} : PropInterface) => {
     const [technology, setTechnologies] = useState<any>([])
     const [languages, setLanguage] = useState<any>([])
 
-    console.log(project)
-
     useEffect(() => {
+        project.languages.nodes = project.languages.nodes.length > 6 ? project.languages.nodes.slice(0,7) : project.languages.nodes
         if (project.repositoryTopics.nodes.length) {
             setTechnologies(project.repositoryTopics.nodes)
         }
@@ -37,7 +36,7 @@ const ProjectBox = ({project} : PropInterface) => {
     }, [])
 
   return (
-    <Box key={project.name} sx={{display: 'flex', flexDirection: 'column', gap: '.5rem'}} className='project' >
+    <Box key={project.name} sx={{display: 'flex', flexDirection: 'column', gap: '.5rem', whiteSpace: "nowrap", overflow: "hidden"}} className='project' >
         <section style={{display: 'flex', gap: '1rem', justifyContent: "center"}}>
             <ConstructionIcon />
             <h2 style={{color: theme.palette.text.primary }} className="project-name" >{project.name}</h2>
@@ -50,7 +49,7 @@ const ProjectBox = ({project} : PropInterface) => {
         </section>
         {technology.length > 0 && 
             <section  style={{color: '#d9b63c', display: 'flex', flexDirection: 'column'}} >
-                <h3>Technologies</h3>
+                <h3>Topics</h3>
                 <Box className="grid-container grid-tech-fit" sx={{gap: '.3rem', alignItems: 'center', padding: '.5rem'}}>
                     {technology.map( (item : any) => (
                         <div key={item.topic.name} >
