@@ -1,6 +1,7 @@
 import { Box } from "@mui/material"
 import CodeIcon from '@mui/icons-material/Code';
 import FolderIcon from '@mui/icons-material/Folder';
+import StarIcon from '@mui/icons-material/Star';
 import { useTheme } from "@mui/material/styles";
 import { useEffect, useState } from "react";
 import Badge from "../Badge/Badge";
@@ -37,11 +38,12 @@ const ProjectBox = ({project} : PropInterface) => {
 
   return (
     <Box key={project.name} sx={{display: 'flex', flexDirection: 'column', gap: '.5rem', }} className='project' >
-        <section style={{display: 'flex', gap: '1rem', justifyContent: "center", alignItems: 'center'}}>
-            <CodeIcon />
+        <Box component={'section'} 
+			sx={{display: 'flex', flexDirection: {xs: 'column', sm: 'row'}, gap: {xs: '.7rem', sm: '1rem'}, justifyContent: "center", alignItems: 'center'}}>
+            <CodeIcon sx={{ color: "#DB4437", display: {xs: 'none', sm: 'block'} }} />
             <h2 style={{color: theme.palette.text.primary }} className="project-name" >{project.name}</h2>
-            <CodeIcon sx={{ color: "#4086f4" }} />
-        </section>
+            <CodeIcon sx={{ color: "#DB4437", display: {xs: 'none', sm: 'block'} }} />
+        </Box>
         <section style={{color: theme.palette.text.secondary }} >
             <h4 style={{textAlign: 'center'}}>
                 {project.description}
@@ -74,13 +76,13 @@ const ProjectBox = ({project} : PropInterface) => {
         <Box sx={{display: 'flex', flexDirection: { xs: "column", sm: "row"}, justifyContent: 'space-between', color: '#3f50b5', alignItems: 'center'}} >
             <div className="folder" >
                 <a href={project.url} target="_blank" style={{gap: '.5rem', display: 'flex', alignItems: 'center'}}>
-                    <h4>Repository</h4>
-                    <FolderIcon />
+                    <FolderIcon sx={{ color: "#DB4437" }} />
+                    <h4 style={{ color: "#DB4437" }} >GitHub Link</h4>
                 </a>
             </div>
             <div className="flex-container" style={{gap: '1rem'}}>
-                <div>⭐</div>
-                <h3 style={{ color: '#d9b63c' }}>{project.stargazerCount}</h3>
+                <StarIcon sx={{ color: "#F4B400" }} />
+                <h3 style={{ color: '#F4B400' }}>{project.stargazerCount}</h3>
             </div>
         </Box>
     </Box>
