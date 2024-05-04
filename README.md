@@ -21,5 +21,10 @@ this project automatically requests to get information on my 6 pinned repositori
 ## 🌙 VIEW 🌙
 <img alt="Logo" src="https://emoral435.github.io/images-repo/v2-chosecase-img.png" width="1000px" height="auto" />
 
+## 🏃 HOW TO RUN 🏃
+To run this project, you have two choices...
+* To run this locally, you can run `npm run dev` within the root directory to spin up the project in dev mode on port 5173
+* To run this build as shown on the website (the projects still won't load, as it is configured with Vercels hosted support for GraphQL calls right now only), run `npm run build` within the root directory
+
 ## AND FINALLY...
 Thank you for checking out this repository :) Always looking to improving this, so if you have any feedback, make an issue and I will work on it! Perhaps it might even be the reason we go to the next semenatic versioning 👀

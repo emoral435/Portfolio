@@ -81,8 +81,8 @@ const Job = ({ position: job } : ICompany) => {
 			</Box>
 		</Box>
         <Divider />
-        <section style={{padding: '.5rem 2rem'}}>
-            <ul>
+        <section style={{padding: '.5rem 2rem', color: theme.palette.text.primary}}>
+            <ul style={{display: 'flex', flexDirection: 'column', gap: '.5rem'}}>
                 {job.bullets.map((bullet : string) => (
                     <li key={bullet}>
                         {bullet}
