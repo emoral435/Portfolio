@@ -23,17 +23,10 @@ const AboutMe = () => {
         <Typography sx={{color: theme.palette.text.secondary, fontSize: '1.2rem'}} component={'div'}>
             <Box sx={{color: theme.palette.text.secondary, fontSize: {xs: '.8rem', md: '1rem'}, fontWeight: 600, display: 'flex', flexDirection: 'column', gap: 3}}>
               <div>
-				Hello! To keep this short and sweet, if you wanted to know a little more about me, look no further place than here! I have always loved the process of making random things
-				such as Origami and Jewelry (two of my favorite hobbies!). As time went on, I stumbled across web development and have fell in love with it ever since, and I now currently
-				attend the University of Illinois Chicago.
+			  	Hi! To keep this short and sweet, if you wanted to know a little more about me, look no further place than here! I have always loved the process of crafting modular pieces, such as origami and jewelry. As time went on, I stumbled across programming by completing Harvard's CS50 and have fell in love with the process ever since, leading me to attend the University of Illinois at Urbana Champaign to study Mathematics and Computer Science.
 			  </div>
 			  <div>
-			  	One last tid bit about me - I also happen to own 7 cats! I am a proud cat dad.
-			  </div>
-              <div>
-				I like building projects related to my toolkit that solves little problems around my life that I believe can be done more effectively. I also
-              	love trying new foods to eat around the city. I am also a google local tour, related to my food habits. In addition, I love to go to the gym, and love being outdoors.
-              	If you would like to know more about me, click on my resume below!
+			  	One last fun fact about me - I also happen to own 7 cats! I am a proud cat dad.
 			  </div>
               <Box sx={{display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'space-around', gap: 4}}>
                 <a href={RESUME} download="EduardoMorales.pdf">

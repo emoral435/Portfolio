@@ -66,7 +66,7 @@ const ncBullets = [
 const Nextcloud = new Company("Nextcloud", "Stuggart, Germany", "Part-time Software Engineer Intern", "Nov. 2023", "May 2024", ncBullets)
 Nextcloud.iconSrc = NC
 Nextcloud.url = "http://www.nextcloud.com"
-Nextcloud.extraURL = "https://nextcloud.com/team/"
+Nextcloud.extraURL = "https://youtu.be/fl2BQu2dWZY?si=lsmWHMpEJIk2gxHR&t=238"
 
 // Data Analyst Researcher experience
 const uicInternship = [
