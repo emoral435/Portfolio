@@ -1,11 +1,11 @@
-import Links from "../Links/Links"
 import { ReactTyped } from "react-typed";
 import { Box } from "@mui/material"
 import { useTheme } from "@mui/material/styles";
-import CodeIcon from '@mui/icons-material/Code';
-import LocalFireDepartmentIcon from '@mui/icons-material/LocalFireDepartment';
-import CloudIcon from '@mui/icons-material/Cloud';
+import TerminalIcon from '@mui/icons-material/Terminal';
+import FunctionsIcon from '@mui/icons-material/Functions';
+import Links from "../Links/Links"
 import PROFILEGIF from '/src/assets/profileGif.gif'
+import UIUC from '../../assets/UIUC.svg';
 import { introInfo } from "../../services/constants";
 
 const Introduction = () => {
@@ -31,20 +31,32 @@ const theme = useTheme()
             </Box>
             <Box component={'h2'} sx={{ display: 'flex', flexDirection: 'column', gap: 1 ,color: theme.palette.text.secondary, fontSize: {xs: '.9rem', sm: '1rem', md: '1.1rem'}}}>
                 <Box component={'div'} sx={{display: 'flex', gap: '12px', justifyContent: 'center', alignItems: 'center'}}>
-					<CloudIcon sx={{ color: "#4086f4" }} />
+					<TerminalIcon sx={{ color: "#4086f4" }} />
                     <Box sx={{ textAlign: "center" }} >{introInfo.position}</Box>
-					<CloudIcon sx={{ color: "#4086f4" }} />
+					<TerminalIcon sx={{ color: "#4086f4" }} />
                 </Box>
                 <Box component={'div'} sx={{display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', whiteSpace: 'nowrap'}}>
                     <Box className="intro-img-container" sx={{ gap: '12px' }} >
-                        <CodeIcon sx={{fontSize: 30, color: '#069e57'}} />
+                        <FunctionsIcon sx={{fontSize: 30, color: '#069e57'}} />
                         <Box component={'h3'}>{introInfo.major} Major</Box>
-                        <CodeIcon sx={{fontSize: 30, color: '#069e57'}} />
+                        <FunctionsIcon sx={{fontSize: 30, color: '#069e57'}} />
                     </Box>
                     <Box className="intro-img-container"  sx={{ gap: '12px'}}>
-                        <LocalFireDepartmentIcon sx={{fontSize: 30, color: '#dc4234'}} />
+					<Box src={UIUC}
+						component="img"
+						alt={`Illini`}
+						sx={{
+							width: "1rem",
+							height: "auto",
+						}} />
                         <Box component={'h3'}>{introInfo.uni}</Box>
-                        <LocalFireDepartmentIcon sx={{fontSize: 30, color: '#dc4234'}} />
+                        <Box src={UIUC}
+						component="img"
+						alt={`Illini`}
+						sx={{
+							width: "1rem",
+							height: "auto",
+						}} />
                     </Box>
                 </Box>
             </Box>
