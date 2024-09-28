@@ -61,7 +61,7 @@ const Enova = new Company(
 Enova.iconSrc = EPNG;
 Enova.url = "https://www.enova.com/";
 // change for the 2024 cohort
-Enova.extraURL = "https://nextcloud.com/team/";
+Enova.extraURL = "https://www.enova.com/interns/";
 
 // Nextcloud experience
 const ncBullets = [
