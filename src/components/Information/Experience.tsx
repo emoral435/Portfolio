@@ -23,9 +23,9 @@ const Experience = () => {
         <AccordionDetails>
           <Typography component={'div'}>
             <Box component={'div'} sx={{color: theme.palette.text.secondary, fontSize: {xs: '.8rem', md: '1rem'}, fontWeight: 600, display: 'flex', flexDirection: 'column', gap: 3}}>
-              {myExperience.map((job: Company) => (
+              {myExperience.map((job: Company, index: number) => (
                 <section key={job.name}>
-                  <Job position={job} />
+                  <Job position={job} alignment={index}/>
                 </section>
               ))}
             </Box>
