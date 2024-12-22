@@ -7,7 +7,7 @@ import Loading from "./Loading"
 import { useState, useEffect } from "react"
 import getStaticProps from "../services/getStaticProps"
 
-function App() {
+function Portfolio() {
   const [isFetching, setIsFetching] = useState<Boolean>(true)
   const [isLoading, setIsLoading] = useState<Boolean>(true)
   const [projects, setProjects] = useState<any>([])
@@ -41,7 +41,7 @@ function App() {
   // if we are not fetching from github's graphql,
   // and our DOM content from React is done loading, then show
   return (!isLoading && !isFetching) ? (
-    <div className="app">
+    <div className="portfolio">
       <StickyNav />
       <Box component="main" sx={{ p: 3 }} id="Home">
         <Toolbar />
@@ -57,4 +57,4 @@ function App() {
   )
 }
 
-export default App
+export default Portfolio

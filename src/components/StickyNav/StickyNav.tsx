@@ -1,6 +1,8 @@
-import { useTheme } from "@mui/material";
+import { ListItemButton, ListItemText, useTheme } from "@mui/material";
 import { ColorModeContext } from "../../store/ColorContext/ColorContext";
 import { useContext, useEffect } from "react";
+
+import { Link } from "react-router-dom";
 
 import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
@@ -10,8 +12,6 @@ import Drawer from "@mui/material/Drawer";
 import IconButton from "@mui/material/IconButton";
 import List from "@mui/material/List";
 import ListItem from "@mui/material/ListItem";
-import ListItemButton from "@mui/material/ListItemButton";
-import ListItemText from "@mui/material/ListItemText";
 import MenuIcon from "@mui/icons-material/Menu";
 import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
@@ -22,7 +22,7 @@ import DarkModeIcon from "@mui/icons-material/DarkMode";
 import LightModeIcon from "@mui/icons-material/LightMode";
 
 const drawerWidth = "100%";
-const navItems = ["Home", "About", "Experience", "Projects", "Contact Me"];
+const navItems = ["Blog", "Home", "About", "Experience", "Projects", "Contact Me"];
 export function Home() {
   const theme = useTheme();
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -36,8 +36,18 @@ export function Home() {
   };
 
   useEffect(() => {
-    setColorText(theme.palette.mode === "dark" ? "Light mode" : "Dark mode");
+    setColorText(theme.palette.mode === "dark" ? "Light Mode" : "Dark Mode");
   }, [theme.palette.mode]);
+
+  const getRedirect = (item: string) => {
+	if (item === "Contact Me") {
+		return "mailto:emoral435@gmail.com";
+	} else if (item === "Blog") {
+		return "/blog";
+	}
+
+	return `#${item}`;
+  }
 
   const drawer = (
     <Box onClick={handleDrawerToggle} sx={{ textAlign: "center" }}>
@@ -48,18 +58,11 @@ export function Home() {
       <List>
         {navItems.map((item) => (
           <ListItem key={item} disablePadding>
-            <a
-              href={
-                item === "Contact Me"
-                  ? "mailto:emoral435@gmail.com"
-                  : `#${item}`
-              }
-              key={item}
-            >
-              <ListItemButton sx={{ textAlign: "center" }}>
-                <ListItemText primary={item} />
-              </ListItemButton>
-            </a>
+            <Link to={ getRedirect(item) }>
+				<ListItemButton sx={{ textAlign: "center" }}>
+                	<ListItemText primary={item} />
+              	</ListItemButton>
+            </Link>
           </ListItem>
         ))}
       </List>
@@ -113,14 +116,7 @@ export function Home() {
           >
             <Box sx={{ display: { xs: "none", md: "flex" }, gap: "1rem" }}>
               {navItems.map((item) => (
-                <a
-                  href={
-                    item === "Contact Me"
-                      ? "mailto:emoral435@gmail.com"
-                      : `#${item}`
-                  }
-                  key={item}
-                >
+				<Link to={ getRedirect(item) } key={item}>
                   <button
                     style={{
                       fontWeight: "bold",
@@ -132,7 +128,7 @@ export function Home() {
                   >
                     {item}
                   </button>
-                </a>
+                </Link>
               ))}
             </Box>
             <button
@@ -140,8 +136,7 @@ export function Home() {
               onClick={colorMode.toggleColorMode}
               style={{
                 display: "flex",
-                flexDirection: "column",
-                alignItems: "center",
+                justifyContent: "center",
               }}
             >
               {theme.palette.mode === "dark" ? (
