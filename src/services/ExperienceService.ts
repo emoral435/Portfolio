@@ -1,7 +1,3 @@
-import NC from "../assets/nextcloud.svg";
-import EPNG from "../assets/enova.png";
-import UIC from "../assets/UIC.svg";
-
 export class Company {
   // guaranteed values each company should have
   readonly name: string;
@@ -12,7 +8,6 @@ export class Company {
   readonly bullets: Array<string>;
   // optional sources
   redirect?: string;
-  icon?: string;
   extraRedirect?: string;
 
   constructor(
@@ -31,10 +26,6 @@ export class Company {
     this.bullets = bullets;
   }
 
-  set iconSrc(src: string) {
-    this.icon = src;
-  }
-
   set url(link: string) {
     this.redirect = link;
   }
@@ -44,6 +35,21 @@ export class Company {
   }
 }
 
+// Nextdoor experience
+const nextdoorBullets = [
+	"Waiting to start!",
+];
+
+const Nextdoor = new Company(
+	"Nextdoor",
+	"San Francisco, California",
+    "Software Engineer Intern",
+    "May 2025",
+    "August 2025",
+    nextdoorBullets,
+);
+
+Nextdoor.url = "https://about.nextdoor.com/"
 // Enova experience
 const enovaBullets = [
   "Developed an API in Go, receiving repository metadata from GitHub’s Webhook API to automate sending Slack messages regarding new pull requests and code reviews, accelerating pull request and code review workflow by 42%",
@@ -53,12 +59,11 @@ const enovaBullets = [
 const Enova = new Company(
   "Enova",
   "Chicago, Illinois",
-  "Full-time Software Engineer Intern",
+  "Software Engineer Intern",
   "June 2024",
   "August 2024",
   enovaBullets,
 );
-Enova.iconSrc = EPNG;
 Enova.url = "https://www.enova.com/";
 // change for the 2024 cohort
 Enova.extraURL = "https://www.enova.com/interns/";
@@ -86,7 +91,6 @@ const Nextcloud = new Company(
   "May 2024",
   ncBullets,
 );
-Nextcloud.iconSrc = NC;
 Nextcloud.url = "http://www.nextcloud.com";
 Nextcloud.extraURL = "https://youtu.be/fl2BQu2dWZY?si=lsmWHMpEJIk2gxHR&t=238";
 
@@ -105,14 +109,13 @@ const uicInternship = [
 const DataAnalyst = new Company(
   "University of Illinois Chicago",
   "Chicago, Illinois",
-  "Full-time Data Analyst",
+  "Data Analyst",
   "June 2023",
   "August 2023",
   uicInternship,
 );
 DataAnalyst.url = "https://engineering.uic.edu/";
-DataAnalyst.iconSrc = UIC;
 DataAnalyst.extraURL =
   "https://medium.com/@emoral435/my-summer-as-a-data-analyst-intern-b62411e7d67a";
 
-export const myExperience = [Enova, Nextcloud, DataAnalyst];
+export const myExperience = [Nextdoor, Enova, Nextcloud, DataAnalyst];
