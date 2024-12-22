@@ -6,15 +6,17 @@ interface ICompany {
 	alignment: number,
 }
 
-const Job = ({ position: job, alignment: alignment } : ICompany) => {
+const Job = ({ position: job, alignment: indexNum } : ICompany) => {
   	const theme = useTheme()
+	const alignment = indexNum % 2 === 0 ? "start" : "end" 
+
 
   	return (
 		<section>
 			<Box sx={{
 				display: 'flex',
 				flexDirection: 'column',
-				alignItems: alignment % 2 === 0 ? 'start' : 'end',
+				alignItems: alignment,
 				justifyContent: 'center',
 			}}>
 				<Box sx={{display: 'flex', gap: {xs: '.5rem', sm: '1rem'}, alignItems: 'center', justifyContent: 'center'}}>
@@ -37,22 +39,7 @@ const Job = ({ position: job, alignment: alignment } : ICompany) => {
 				<Box sx={{display: 'flex', justifyContent: 'center'}}>
 					{job.role}
 				</Box>
-				<Box
-					component={job.extraRedirect ? 'a' : 'p'}
-					href={job.extraRedirect ?? undefined}
-					target={job.extraRedirect ? "_blank" : undefined}
-					title={job.extraRedirect ? `Redirect to see extra information.` : undefined}
-					sx={{
-						
-						display: "flex",
-						alignItems: "center",
-						textAlign: "center",
-						color: theme.palette.text.primary,
-						fontSize: {xs: ".9rem", sm: "1.5rem"},
-						'&:hover': {color: job.extraRedirect ? theme.palette.primary.light : theme.palette.text.primary}
-					}}>
-				</Box>
-				<Box sx={{margin: ".5rem 0", fontSize: {xs: '.8rem', sm: '1rem'}, display: 'flex', gap: '.5rem', alignItems: 'start', flexDirection: {xs: "column", sm: "row"}, color: theme.palette.text.secondary}}>
+				<Box sx={{margin: ".5rem 0", fontSize: {xs: '.8rem', sm: '1rem'}, display: 'flex', gap: '.5rem', alignItems: alignment, flexDirection: {xs: "column", sm: "row"}, color: theme.palette.text.secondary}}>
 					<p style={{color: theme.palette.text.primary}}>{job.location}</p>
 					<Box component={'p'} sx={{display: {xs :'none', sm: 'block'}}}> | </Box>
 					<p style={{color: theme.palette.text.primary}}>{job.startDate} - {job.endDate}</p>
