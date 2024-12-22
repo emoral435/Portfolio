@@ -7,5 +7,5 @@ export const introInfo = {
 	location: "San Francisco, California",
     position: "Software Engineer @ Nextdoor",
     major: "Math + Computer Science",
-    uni: "University of Illinois Urbana-Champaign",
+    uni: "University of Illinois",
 }
