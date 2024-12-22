@@ -16,8 +16,6 @@ import MenuIcon from "@mui/icons-material/Menu";
 import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
 import { useState } from "react";
-import KeyboardDoubleArrowRightIcon from "@mui/icons-material/KeyboardDoubleArrowRight";
-import KeyboardDoubleArrowLeftIcon from "@mui/icons-material/KeyboardDoubleArrowLeft";
 import DarkModeIcon from "@mui/icons-material/DarkMode";
 import LightModeIcon from "@mui/icons-material/LightMode";
 
@@ -137,6 +135,7 @@ export function Home() {
               style={{
                 display: "flex",
                 justifyContent: "center",
+				gap: ".5rem",
               }}
             >
               {theme.palette.mode === "dark" ? (
@@ -145,7 +144,6 @@ export function Home() {
                 <DarkModeIcon />
               )}
               <section style={{ display: "flex", alignItems: "center" }}>
-                <KeyboardDoubleArrowRightIcon />
                 <h6
                   style={{
                     fontWeight: "bold",
@@ -155,7 +153,6 @@ export function Home() {
                 >
                   {colorText}
                 </h6>
-                <KeyboardDoubleArrowLeftIcon />
               </section>
               {theme.palette.mode === "dark" ? (
                 <LightModeIcon />
