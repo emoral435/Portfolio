@@ -7,7 +7,6 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import { ToggleDarkMode } from './store/ColorContext/ColorContext.tsx'
 import Portfolio from './views/Home.tsx'
 import NotFoundPage from './views/NotFoundPage.tsx'
-import Blog from './views/Blog.tsx'
 
 const router = createBrowserRouter([
 	{
@@ -15,10 +14,6 @@ const router = createBrowserRouter([
 		element: <ToggleDarkMode><Portfolio /></ToggleDarkMode>,
 		errorElement: <NotFoundPage />,
 	},
-	{
-		path: "/blog",
-        element: <ToggleDarkMode><Blog /></ToggleDarkMode>,
-	}
 ]);
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
