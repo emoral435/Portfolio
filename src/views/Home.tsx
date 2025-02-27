@@ -6,6 +6,7 @@ import Footer from "../components/Footer/Footer"
 import Loading from "./Loading"
 import { useState, useEffect } from "react"
 import getStaticProps from "../services/getStaticProps"
+import { ToggleDarkMode } from "../store/ColorContext/ColorContext.tsx"
 
 function Portfolio() {
   const [isFetching, setIsFetching] = useState<Boolean>(true)
@@ -41,17 +42,19 @@ function Portfolio() {
   // if we are not fetching from github's graphql,
   // and our DOM content from React is done loading, then show
   return (!isLoading && !isFetching) ? (
-    <div className="portfolio">
-      <StickyNav />
-      <Box component="main" sx={{ p: 3 }} id="Home">
-        <Toolbar />
-        <Box sx={{ marginTop: '3.2rem', display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', gap: {xs: '3rem',md: '5rem'}}} >
-          <Introduction />
-          <Information projects={projects} id="projects" />
+    <ToggleDarkMode>
+      <div className="portfolio">
+        <StickyNav />
+        <Box component="main" sx={{ p: 3 }} id="Home">
+          <Toolbar />
+          <Box sx={{ marginTop: '3.2rem', display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', gap: {xs: '3rem',md: '5rem'}}} >
+            <Introduction />
+            <Information projects={projects} id="projects" />
+          </Box>
         </Box>
-      </Box>
-      <Footer />
-    </div>
+        <Footer />
+      </div>
+    </ToggleDarkMode>
   ) : (
     <Loading />
   )
