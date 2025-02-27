@@ -2,7 +2,7 @@ import { Accordion, AccordionDetails, AccordionSummary, Box, Typography } from '
 import HomeRepairServiceIcon from '@mui/icons-material/HomeRepairService';
 import { useTheme } from "@mui/material/styles";
 import Job from '../Job/Job.tsx'
-import { Company, myExperience } from '../../services/ExperienceService';
+import { Company, myExperience } from '../../lib/ExperienceService.ts';
 
 
 const Experience = () => {

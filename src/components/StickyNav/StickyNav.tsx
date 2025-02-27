@@ -1,5 +1,5 @@
 import { ListItemButton, ListItemText, useTheme } from "@mui/material";
-import { ColorModeContext } from "../../store/ColorContext/ColorContext";
+import { ColorModeContext } from "../../lib/ColorContext";
 import { useContext, useEffect } from "react";
 
 import AppBar from "@mui/material/AppBar";
@@ -18,7 +18,7 @@ import DarkModeIcon from "@mui/icons-material/DarkMode";
 import LightModeIcon from "@mui/icons-material/LightMode";
 
 const drawerWidth = "100%";
-const navItems = ["Home", "About", "Experience", "Projects", "Contact Me"];
+const navItems = ["Blog", "Home", "About", "Experience", "Projects", "Contact Me"];
 export function Home() {
   const theme = useTheme();
   const [mobileOpen, setMobileOpen] = useState(false);
