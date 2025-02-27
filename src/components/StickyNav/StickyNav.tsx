@@ -2,8 +2,6 @@ import { ListItemButton, ListItemText, useTheme } from "@mui/material";
 import { ColorModeContext } from "../../store/ColorContext/ColorContext";
 import { useContext, useEffect } from "react";
 
-import { Link } from "react-router-dom";
-
 import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
 import CssBaseline from "@mui/material/CssBaseline";
@@ -48,7 +46,7 @@ export function Home() {
   }
 
   const drawer = (
-    <Box onClick={handleDrawerToggle} sx={{ textAlign: "center" }}>
+    <Box className="--font-roboto" onClick={handleDrawerToggle} sx={{ textAlign: "center"}}>
       <Typography variant="h6" sx={{ my: 2 }}>
         Eduardo Morales
       </Typography>
@@ -56,7 +54,7 @@ export function Home() {
       <List>
         {navItems.map((item) => (
           <ListItem key={item} disablePadding>
-            <a href={ getRedirect(item) }>
+            <a className='' href={ getRedirect(item) }>
 				        <ListItemButton sx={{ textAlign: "center" }}>
                 	<ListItemText primary={item} />
               	</ListItemButton>
@@ -74,6 +72,7 @@ export function Home() {
         maxHeight: "min-content",
         justifyContent: "space-around",
       }}
+      className="--font-roboto"
     >
       <CssBaseline />
       <AppBar
@@ -101,7 +100,6 @@ export function Home() {
             component="div"
             sx={{
               fontWeight: "bold",
-              fontFamily: "Poppins",
               flexGrow: 1,
               display: { xs: "none", sm: "block" },
             }}
@@ -118,7 +116,6 @@ export function Home() {
                   <button
                     style={{
                       fontWeight: "bold",
-                      fontFamily: "Poppins",
                       fontSize: "large",
                       marginLeft: "1rem",
                     }}
@@ -147,7 +144,6 @@ export function Home() {
                 <h6
                   style={{
                     fontWeight: "bold",
-                    fontFamily: "Poppins",
                     fontSize: "large",
                   }}
                 >

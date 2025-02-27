@@ -5,10 +5,10 @@ import StorageIcon from '@mui/icons-material/Storage';
 import HomeWorkIcon from '@mui/icons-material/HomeWork';
 import LocationCityIcon from '@mui/icons-material/LocationCity';
 import Links from "../Links/Links"
-import PROFILEGIF from '/src/assets/profileGif.gif'
-import UIUC from '../../assets/UIUC.svg';
+import PROFILEGIF from '../../../public/profileGif.gif'
 import { introInfo } from "../../services/constants";
-
+import Image from 'next/image';
+import UoI from '../../../public/university-of-illinois.svg'
 const Introduction = () => {
   	const theme = useTheme()
 
@@ -17,7 +17,7 @@ const Introduction = () => {
 			<Box component={'section'} sx={{display: 'flex', gap: {xs: '1rem', md:'3rem'}}}>
 				<Links inFooter={false}/>
 				<Box sx={{width: {xs: '15rem', md: '17rem', lg: '25rem'}, height: {xs: '15rem', md: '17rem', lg: '25rem'}, borderRadius: "15px", boxShadow: "5px 10px 20px rgb(0 0 0 / 0.5)"}}>
-					<img src={PROFILEGIF} alt="" className="profile-pic"/>
+					<Image src={PROFILEGIF} alt="Candid photo of myself" className="profile-pic"/>
 				</Box>
 			</Box>
 			<Box component={'section'} sx={{maxWidth: 'min-content'}}>
@@ -47,9 +47,9 @@ const Introduction = () => {
 						<StorageIcon sx={{color: '#069e57'}} />
 					</Box>
 					<Box sx={{display: 'flex', gap: '12px', justifyContent: 'center', alignItems: 'center'}}>
-						<Box src={UIUC} component="img" alt={`Illini`} sx={{ width: ".7rem", height: "auto" }} />
+						<Image src={UoI} alt="University of Illinois Icon" width={20} height={20}/>
 						<Box>{introInfo.uni}</Box>
-						<Box src={UIUC} component="img" alt={`Illini`} sx={{ width: ".7rem", height: "auto" }} />
+						<Image src={UoI} alt="University of Illinois Icon" width={20} height={20}/>
 					</Box>
 				</Box>
 			</Box>

@@ -21,8 +21,8 @@ const Footer = () => {
         </Box>
         <Box sx={{ display: 'flex', gap: '1rem', flexDirection: {xs: 'column', md: 'row'} }}>
             {navItems.map((item) => (
-                <a href={item === 'Contact Me' ? 'mailto:emoral435@gmail.com' : `#${item}`} key={item}>
-                    <button style={{fontWeight: 'bold', fontFamily: 'Poppins', fontSize: 'large'}} className="button footer-nav" >
+                <a className="--font-roboto" href={item === 'Contact Me' ? 'mailto:emoral435@gmail.com' : `#${item}`} key={item}>
+                    <button style={{fontWeight: 'bold', fontSize: 'large'}} className="button footer-nav" >
                         {item}
                     </button>
                 </a>

@@ -16,7 +16,6 @@
     "@mui/lab": "^5.0.0-alpha.165",
     "@mui/material": "^5.15.10",
     "@mui/system": "^5.15.9",
-    "@next/font": "^14.2.15",
     "axios": "^1.4.0",
     "cors": "^2.8.5",
     "dotenv": "^16.0.3",

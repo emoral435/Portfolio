@@ -1,4 +1,11 @@
+import { Roboto_Mono } from 'next/font/google'
 import type { Metadata } from "next"
+
+const roboto = Roboto_Mono({
+    weight: ['400', '500', '600', '700'],
+    variable: '--font-roboto',
+    subsets: ['latin'],
+})
 
 export const metadata: Metadata = {
     title: 'Eduardo Morales',
@@ -11,7 +18,7 @@ export default function RootLayout({
     children: React.ReactNode
   }) {
     return (
-        <html lang="en">
+        <html lang="en" className={`${roboto.variable}`}>
             <head>
                 <title>Eduardo Morales</title>
             </head>
