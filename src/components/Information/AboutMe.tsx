@@ -5,9 +5,9 @@ import KeyboardDoubleArrowRightIcon from '@mui/icons-material/KeyboardDoubleArro
 import KeyboardDoubleArrowLeftIcon from '@mui/icons-material/KeyboardDoubleArrowLeft'
 
 const AboutMe = () => {
-    const theme = useTheme()
+	const theme = useTheme()
 
-  	return (
+	return (
 		<Accordion id='About' style={{ boxShadow: "none" }}>
 			<AccordionSummary
 			sx={{display: 'flex', justifyContent: 'center'}}

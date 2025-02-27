@@ -7,11 +7,11 @@ interface ICompany {
 }
 
 const Job = ({ position: job, alignment: indexNum } : ICompany) => {
-  	const theme = useTheme()
+	const theme = useTheme()
 	const alignment = indexNum % 2 === 0 ? "start" : "end" 
 
 
-  	return (
+	return (
 		<section>
 			<Box sx={{
 				display: 'flex',

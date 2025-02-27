@@ -20,22 +20,22 @@ import LightModeIcon from "@mui/icons-material/LightMode";
 const drawerWidth = "100%";
 const navItems = ["Blog", "Home", "About", "Experience", "Projects", "Contact Me"];
 export function Home() {
-  const theme = useTheme();
-  const [mobileOpen, setMobileOpen] = useState(false);
-  const [colorText, setColorText] = useState(
-    theme.palette.mode === "dark" ? "Light mode" : "Dark mode",
-  );
-  const colorMode = useContext(ColorModeContext);
+	const theme = useTheme();
+	const [mobileOpen, setMobileOpen] = useState(false);
+	const [colorText, setColorText] = useState(
+		theme.palette.mode === "dark" ? "Light mode" : "Dark mode",
+	);
+	const colorMode = useContext(ColorModeContext);
 
-  const handleDrawerToggle = () => {
-    setMobileOpen((prevState) => !prevState);
-  };
+	const handleDrawerToggle = () => {
+		setMobileOpen((prevState) => !prevState);
+	};
 
-  useEffect(() => {
-    setColorText(theme.palette.mode === "dark" ? "Light Mode" : "Dark Mode");
-  }, [theme.palette.mode]);
+	useEffect(() => {
+		setColorText(theme.palette.mode === "dark" ? "Light Mode" : "Dark Mode");
+	}, [theme.palette.mode]);
 
-  const getRedirect = (item: string) => {
+	const getRedirect = (item: string) => {
 	if (item === "Contact Me") {
 		return "mailto:emoral435@gmail.com";
 	} else if (item === "Blog") {
@@ -43,144 +43,144 @@ export function Home() {
 	}
 
 	return `#${item}`;
-  }
+	}
 
-  const drawer = (
-    <Box className="--font-roboto" onClick={handleDrawerToggle} sx={{ textAlign: "center"}}>
-      <Typography variant="h6" sx={{ my: 2 }}>
-        Eduardo Morales
-      </Typography>
-      <Divider />
-      <List>
-        {navItems.map((item) => (
-          <ListItem key={item} disablePadding>
-            <a className='' href={ getRedirect(item) }>
-				        <ListItemButton sx={{ textAlign: "center" }}>
-                	<ListItemText primary={item} />
-              	</ListItemButton>
-            </a>
-          </ListItem>
-        ))}
-      </List>
-    </Box>
-  );
+	const drawer = (
+		<Box className="--font-roboto" onClick={handleDrawerToggle} sx={{ textAlign: "center"}}>
+			<Typography variant="h6" sx={{ my: 2 }}>
+				Eduardo Morales
+			</Typography>
+			<Divider />
+			<List>
+				{navItems.map((item) => (
+					<ListItem key={item} disablePadding>
+						<a className='' href={ getRedirect(item) }>
+								<ListItemButton sx={{ textAlign: "center" }}>
+									<ListItemText primary={item} />
+								</ListItemButton>
+						</a>
+					</ListItem>
+				))}
+			</List>
+		</Box>
+	);
 
-  return (
-    <Box
-      sx={{
-        display: "flex",
-        maxHeight: "min-content",
-        justifyContent: "space-around",
-      }}
-      className="--font-roboto"
-    >
-      <CssBaseline />
-      <AppBar
-        component="nav"
-        sx={{
-          background: theme.palette.background.default,
-          color: theme.palette.text.primary,
-          boxShadow: "none",
-        }}
-      >
-        <Toolbar
-          sx={{ display: "flex", justifyContent: "space-around", gap: "2rem" }}
-        >
-          <IconButton
-            color="inherit"
-            aria-label="open drawer"
-            edge="start"
-            onClick={handleDrawerToggle}
-            sx={{ mr: 2, display: { sm: "none" } }}
-          >
-            <MenuIcon />
-          </IconButton>
-          <Typography
-            variant="h6"
-            component="div"
-            sx={{
-              fontWeight: "bold",
-              flexGrow: 1,
-              display: { xs: "none", sm: "block" },
-            }}
-            className="name"
-          >
-            <a href="#">Eduardo Morales</a>
-          </Typography>
-          <section
-            style={{ display: "flex", gap: "1rem", alignItems: "center" }}
-          >
-            <Box sx={{ display: { xs: "none", md: "flex" }, gap: "1rem" }}>
-              {navItems.map((item) => (
-				        <a href={ getRedirect(item) } key={item}>
-                  <button
-                    style={{
-                      fontWeight: "bold",
-                      fontSize: "large",
-                      marginLeft: "1rem",
-                    }}
-                    className="button nav-btn"
-                  >
-                    {item}
-                  </button>
-                </a>
-              ))}
-            </Box>
-            <button
-              className="button nav-btn"
-              onClick={colorMode.toggleColorMode}
-              style={{
-                display: "flex",
-                justifyContent: "center",
+	return (
+		<Box
+			sx={{
+				display: "flex",
+				maxHeight: "min-content",
+				justifyContent: "space-around",
+			}}
+			className="--font-roboto"
+		>
+			<CssBaseline />
+			<AppBar
+				component="nav"
+				sx={{
+					background: theme.palette.background.default,
+					color: theme.palette.text.primary,
+					boxShadow: "none",
+				}}
+			>
+				<Toolbar
+					sx={{ display: "flex", justifyContent: "space-around", gap: "2rem" }}
+				>
+					<IconButton
+						color="inherit"
+						aria-label="open drawer"
+						edge="start"
+						onClick={handleDrawerToggle}
+						sx={{ mr: 2, display: { sm: "none" } }}
+					>
+						<MenuIcon />
+					</IconButton>
+					<Typography
+						variant="h6"
+						component="div"
+						sx={{
+							fontWeight: "bold",
+							flexGrow: 1,
+							display: { xs: "none", sm: "block" },
+						}}
+						className="name"
+					>
+						<a href="#">Eduardo Morales</a>
+					</Typography>
+					<section
+						style={{ display: "flex", gap: "1rem", alignItems: "center" }}
+					>
+						<Box sx={{ display: { xs: "none", md: "flex" }, gap: "1rem" }}>
+							{navItems.map((item) => (
+								<a href={ getRedirect(item) } key={item}>
+									<button
+										style={{
+											fontWeight: "bold",
+											fontSize: "large",
+											marginLeft: "1rem",
+										}}
+										className="button nav-btn"
+									>
+										{item}
+									</button>
+								</a>
+							))}
+						</Box>
+						<button
+							className="button nav-btn"
+							onClick={colorMode.toggleColorMode}
+							style={{
+								display: "flex",
+								justifyContent: "center",
 				gap: ".5rem",
-              }}
-            >
-              {theme.palette.mode === "dark" ? (
-                <LightModeIcon />
-              ) : (
-                <DarkModeIcon />
-              )}
-              <section style={{ display: "flex", alignItems: "center" }}>
-                <h6
-                  style={{
-                    fontWeight: "bold",
-                    fontSize: "large",
-                  }}
-                >
-                  {colorText}
-                </h6>
-              </section>
-              {theme.palette.mode === "dark" ? (
-                <LightModeIcon />
-              ) : (
-                <DarkModeIcon />
-              )}
-            </button>
-          </section>
-        </Toolbar>
-      </AppBar>
-      <nav>
-        <Drawer
-          variant="temporary"
-          anchor="top"
-          open={mobileOpen}
-          onClose={handleDrawerToggle}
-          ModalProps={{
-            keepMounted: true, // Better open performance on mobile.
-          }}
-          sx={{
-            display: { xs: "flex", sm: "none" },
-            "& .MuiDrawer-paper": {
-              boxSizing: "border-box",
-              width: drawerWidth,
-            },
-          }}
-        >
-          {drawer}
-        </Drawer>
-      </nav>
-    </Box>
-  );
+							}}
+						>
+							{theme.palette.mode === "dark" ? (
+								<LightModeIcon />
+							) : (
+								<DarkModeIcon />
+							)}
+							<section style={{ display: "flex", alignItems: "center" }}>
+								<h6
+									style={{
+										fontWeight: "bold",
+										fontSize: "large",
+									}}
+								>
+									{colorText}
+								</h6>
+							</section>
+							{theme.palette.mode === "dark" ? (
+								<LightModeIcon />
+							) : (
+								<DarkModeIcon />
+							)}
+						</button>
+					</section>
+				</Toolbar>
+			</AppBar>
+			<nav>
+				<Drawer
+					variant="temporary"
+					anchor="top"
+					open={mobileOpen}
+					onClose={handleDrawerToggle}
+					ModalProps={{
+						keepMounted: true, // Better open performance on mobile.
+					}}
+					sx={{
+						display: { xs: "flex", sm: "none" },
+						"& .MuiDrawer-paper": {
+							boxSizing: "border-box",
+							width: drawerWidth,
+						},
+					}}
+				>
+					{drawer}
+				</Drawer>
+			</nav>
+		</Box>
+	);
 }
 
 export default Home;

@@ -12,8 +12,8 @@ import getStaticProps from "../lib/getStaticProps.ts"
 import { ToggleDarkMode } from "../lib/ColorContext.tsx"
 
 function Home() {
-  const [isFetching, setIsFetching] = useState<Boolean>(true)
-  const [isLoading, setIsLoading] = useState<Boolean>(true)
+  const [isFetching, setIsFetching] = useState<boolean>(true)
+  const [isLoading, setIsLoading] = useState<boolean>(true)
   const [projects, setProjects] = useState<any>([])
 
   useEffect(() => {

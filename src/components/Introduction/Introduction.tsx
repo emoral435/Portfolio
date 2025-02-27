@@ -10,9 +10,9 @@ import { introInfo } from "../../lib/constants";
 import Image from 'next/image';
 import UoI from '../../../public/university-of-illinois.svg'
 const Introduction = () => {
-  	const theme = useTheme()
+	const theme = useTheme()
 
-  	return (
+	return (
 		<Box component={'section'} sx={{ display: 'flex', flexDirection: {xs: 'column', md: 'row'}, gap: {xs: 2, md: 15}, justifyContent: 'center', alignItems: 'center' }}>
 			<Box component={'section'} sx={{display: 'flex', gap: {xs: '1rem', md:'3rem'}}}>
 				<Links inFooter={false}/>
@@ -33,8 +33,8 @@ const Introduction = () => {
 				<Box component={'h2'} sx={{ display: 'flex', flexDirection: 'column', gap: 1 ,color: theme.palette.text.secondary, fontSize: {xs: '.9rem', sm: '1rem', md: '1.1rem'}}}>
 					<Box component={'div'} sx={{display: 'flex', gap: '12px', justifyContent: 'center', alignItems: 'center'}}>
 						<LocationCityIcon sx={{ color: "#ffcc00" }} />
-                        <Box sx={{ textAlign: "center" }} >{introInfo.location}</Box>
-                        <LocationCityIcon sx={{ color: "#ffcc00" }} />
+						<Box sx={{ textAlign: "center" }} >{introInfo.location}</Box>
+						<LocationCityIcon sx={{ color: "#ffcc00" }} />
 					</Box>
 					<Box component={'div'} sx={{display: 'flex', gap: '12px', justifyContent: 'center', alignItems: 'center'}}>
 						<HomeWorkIcon sx={{ color: "#4086f4" }} />
