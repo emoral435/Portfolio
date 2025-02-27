@@ -1,9 +1,9 @@
 import { useTheme } from "@mui/material/styles";
 import { Accordion, AccordionDetails, AccordionSummary, Box, Typography, Button } from '@mui/material'
 import InfoIcon from '@mui/icons-material/Info';
-import RESUME from '/src/resume/EduardoMoralesResume.pdf'
 import KeyboardDoubleArrowRightIcon from '@mui/icons-material/KeyboardDoubleArrowRight'
 import KeyboardDoubleArrowLeftIcon from '@mui/icons-material/KeyboardDoubleArrowLeft'
+import Link from "next/link";
 
 const AboutMe = () => {
     const theme = useTheme()
@@ -32,13 +32,13 @@ const AboutMe = () => {
 					Outside of coding, I’m a proud cat parent to 15 🐈 and an avid home cook who loves experimenting in the kitchen!
 				</div>
 				<Box sx={{display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'space-around', gap: 4}}>
-					<a href={RESUME} download="EduardoMoralesResume.pdf">
+					<Link href={'../../../public/EduardoMoralesResume.pdf'} download="EduardoMoralesResume.pdf">
 						<Button variant='contained' size='large' sx={{textTransform: 'none', padding: {xs: '1rem 1rem',md: '2rem 2rem'}, fontFamily: 'Poppins', borderRadius: '10px'}}>
 						<KeyboardDoubleArrowRightIcon />
 						<div>Download Resume</div>
 						<KeyboardDoubleArrowLeftIcon />
 						</Button>
-					</a>
+					</Link>
 				</Box>
 				</Box>
 			</Typography>

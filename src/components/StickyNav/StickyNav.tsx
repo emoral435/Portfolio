@@ -56,11 +56,11 @@ export function Home() {
       <List>
         {navItems.map((item) => (
           <ListItem key={item} disablePadding>
-            <Link to={ getRedirect(item) }>
-				<ListItemButton sx={{ textAlign: "center" }}>
+            <a href={ getRedirect(item) }>
+				        <ListItemButton sx={{ textAlign: "center" }}>
                 	<ListItemText primary={item} />
               	</ListItemButton>
-            </Link>
+            </a>
           </ListItem>
         ))}
       </List>
@@ -114,7 +114,7 @@ export function Home() {
           >
             <Box sx={{ display: { xs: "none", md: "flex" }, gap: "1rem" }}>
               {navItems.map((item) => (
-				<Link to={ getRedirect(item) } key={item}>
+				        <a href={ getRedirect(item) } key={item}>
                   <button
                     style={{
                       fontWeight: "bold",
@@ -126,7 +126,7 @@ export function Home() {
                   >
                     {item}
                   </button>
-                </Link>
+                </a>
               ))}
             </Box>
             <button
