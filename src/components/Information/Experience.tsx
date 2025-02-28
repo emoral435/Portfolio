@@ -7,7 +7,7 @@ import { Company, myExperience } from '../../lib/ExperienceService.ts';
 
 const Experience = () => {
   const theme = useTheme()
-	console.log(myExperience)
+  
   return (
     <Accordion id='Experience' style={{ boxShadow: "none" }} >
         <AccordionSummary
