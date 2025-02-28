@@ -6,7 +6,6 @@ export default async function getStaticProps() {
         uri: 'https://api.github.com/graphql',
       });
       const key = process.env.NEXT_PUBLIC_GH_KEY
-      console.log(`The key we have received from the environment: ${key}`)
       const authLink = setContext((_, { headers }) => {
         return {
           headers: {
