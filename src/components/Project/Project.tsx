@@ -7,8 +7,8 @@ import { useEffect, useState } from "react";
 import Badge from "../Badge/Badge";
 
 function getDarkColor() {
-    var color = '#';
-    for (var i = 0; i < 6; i++) {
+    let color = '#';
+    for (let i = 0; i < 6; i++) {
         color += Math.floor(Math.random() * 10);
     }
     return color;

@@ -6,7 +6,8 @@ interface Children {
     children: ReactElement
 }
 
-export const ColorModeContext = createContext({ toggleColorMode: () => {}})
+/* tslint:disable:no-empty */
+export const ColorModeContext = createContext({ toggleColorMode: () => { undefined }})
 
 export const ToggleDarkMode = ({ children } : Children) => {
     let defaultColorMode = "dark"
