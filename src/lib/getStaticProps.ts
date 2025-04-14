@@ -58,6 +58,7 @@ export default async function getStaticProps() {
       })
 
       const { user } = data;
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
       const pinnedItems = await user.pinnedItems.edges.map((edge : any) => edge.node);
       return {
           pinnedItems

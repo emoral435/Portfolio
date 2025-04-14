@@ -1,8 +1,13 @@
 import { Accordion, AccordionDetails, AccordionSummary, Box, Typography } from '@mui/material';
 import AccountTreeIcon from '@mui/icons-material/AccountTree';
 import ProjectBox from '../Project/Project';
+import { projectNode } from '../../lib/constants';
 
-const Projects = ({projects}:any) => {
+interface projectsProps {
+  projects: projectNode[]
+}
+
+const Projects = ({ projects } : projectsProps) => {
 	return (
 		<Accordion id='Projects' style={{ boxShadow: "none" }} >
 				<AccordionSummary
@@ -20,7 +25,7 @@ const Projects = ({projects}:any) => {
 				{
 				projects ?
 					<Box className="grid-container grid-project-fit" sx={{gap: '3rem', alignItems: 'center'}}>
-						{projects.length > 0 && projects.map((project : any) =>(
+						{projects.length > 0 && projects.map((project : projectNode) =>(
 						<ProjectBox project={project} key={project.name} />
 						))}
 					</Box>

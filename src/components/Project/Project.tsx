@@ -5,6 +5,7 @@ import StarIcon from '@mui/icons-material/Star';
 import { useTheme } from "@mui/material/styles";
 import { useEffect, useState } from "react";
 import Badge from "../Badge/Badge";
+import { projectLanguages, projectNode, projectRepositoryTopics } from "../../lib/constants";
 
 function getDarkColor() {
     let color = '#';
@@ -14,27 +15,31 @@ function getDarkColor() {
     return color;
 }
 
-
-interface PropInterface {
-    project: any
+type PropInterface = {
+    project: projectNode,
 }
-
 
 const ProjectBox = ({project} : PropInterface) => {
     const theme = useTheme()
-    const [technology, setTechnologies] = useState<any>([])
-    const [languages, setLanguage] = useState<any>([])
+    const [technology, setTechnologies] = useState<projectRepositoryTopics[]>([])
+    const [languages, setLanguage] = useState<projectLanguages[]>([])
 
     useEffect(() => {
         if (project.repositoryTopics.nodes.length) {
-			project.repositoryTopics.nodes = project.repositoryTopics.nodes.length > 5 ? project.repositoryTopics.nodes.slice(0, 6) : project.repositoryTopics.nodes
-            setTechnologies(project.repositoryTopics.nodes)
+            if (project.repositoryTopics.nodes.length > 5) {
+                setTechnologies(project.repositoryTopics.nodes.slice(0, 6))
+            } else {
+                setTechnologies(project.repositoryTopics.nodes)
+            }
         }
         if (project.languages.nodes.length) {
-			project.languages.nodes = project.languages.nodes.length > 3 ? project.languages.nodes.slice(0, 3) : project.languages.nodes
-            setLanguage(project.languages.nodes)
+            if (project.languages.nodes.length > 3) {
+                setLanguage(project.languages.nodes.slice(0, 3))
+            } else {
+                setLanguage(project.languages.nodes)
+            }
         }
-    }, [])
+    }, [project.repositoryTopics.nodes, project.languages.nodes])
 
   return (
     <Box key={project.name} sx={{display: 'flex', flexDirection: 'column', gap: '.5rem', }} className='project' >
@@ -53,7 +58,7 @@ const ProjectBox = ({project} : PropInterface) => {
             <section  style={{color: '#d9b63c', display: 'flex', flexDirection: 'column'}} >
                 <h3>Topics</h3>
                 <Box className="grid-container grid-tech-fit" sx={{gap: '.3rem', alignItems: 'center', padding: '.5rem'}}>
-                    {technology.map( (item : any) => (
+                    {technology.map( (item : projectRepositoryTopics) => (
                         <div key={item.topic.name} >
                             <Badge text={item.topic.name} color ={getDarkColor()} textColor={'white'} />
                         </div>
@@ -65,7 +70,7 @@ const ProjectBox = ({project} : PropInterface) => {
             <section style={{color: '#d9b63c', display: 'flex', flexDirection: 'column', alignContent: 'center'}} >
                 <h3>Languages</h3>
                 <Box className="grid-container grid-tech-fit" sx={{gap: '.3rem', alignItems: 'center', padding: '.5rem'}}>
-                    {languages.map( (item : any) => (
+                    {languages.map( (item : projectLanguages) => (
                         <div key={item.name} >
                             <Badge  text={item.name} color ={item.color} textColor={'black'} />
                         </div>

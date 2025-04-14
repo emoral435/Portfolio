@@ -3,9 +3,14 @@ import Experience from './Experience';
 import Projects from './Projects';
 import { Box } from '@mui/material';
 
-// BG COLOR : backgroundColor: '#3f50b5', 
+import type { projectNode } from '../../lib/constants';
 
-export default function Information({ projects } : any) {
+
+interface informationProps {
+  projects: projectNode[]
+}
+
+export default function Information({ projects } : informationProps) {
 
   return (
     <Box component={'div'} sx={{width: {xs: '100%', lg: '80rem'}}}>
