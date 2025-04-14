@@ -7,6 +7,7 @@ const roboto = Roboto_Mono({
     subsets: ['latin'],
 })
 
+// eslint-disable-next-line react-refresh/only-export-components
 export const metadata: Metadata = {
     title: 'Eduardo Morales',
     description: 'Hello! Welcome to my corner of the web.',
