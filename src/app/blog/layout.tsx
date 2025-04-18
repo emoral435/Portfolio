@@ -7,6 +7,8 @@ export default function BlogLayout({
   }: {
     children: React.ReactNode
   }) {
+    const copyrightYear = new Date().getFullYear();
+
     return (
       <section id="blog-top" className="blog mg-sm">
         <div className="divider"></div>
@@ -25,7 +27,7 @@ export default function BlogLayout({
             <a href="#blog-top" className="center">
               <ArrowUpIcon width={20}/>
             </a>
-            <div>© Copyright, 2025 ©</div>
+            <div>© Copyright, {copyrightYear} ©</div>
             <a href="#blog-top" className="center">
               <ArrowUpIcon width={20}/>
             </a>

@@ -1,0 +1,9 @@
+.loading-header {
+  font-size: 3rem;
+}
+
+@media (max-width: 630px) {
+  .loading-header {
+    font-size: 1.5rem;
+  }
+}

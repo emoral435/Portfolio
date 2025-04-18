@@ -1,5 +1,5 @@
 import { Box, Divider, useTheme } from "@mui/material"
-import { Company } from "../../lib/ExperienceService"
+import { Company } from "../../lib/experience-service"
 
 interface ICompany {
 	position: Company,

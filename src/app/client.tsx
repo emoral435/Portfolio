@@ -8,7 +8,7 @@ import Information from "../components/Information/Information.tsx"
 import Footer from "../components/Footer/Footer.tsx"
 import Loading from "../components/Loading/Loading.tsx"
 import { useState, useEffect } from "react"
-import getStaticProps from "../lib/getStaticProps.ts"
+import getStaticProps from "../lib/get-static-props.ts"
 import { ToggleDarkMode } from "../lib/ColorContext.tsx"
 
 import type { projectNode } from '../lib/constants.ts'
