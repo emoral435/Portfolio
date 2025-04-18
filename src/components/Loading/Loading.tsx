@@ -1,4 +1,5 @@
 import { Box, LinearProgress } from "@mui/material"
+import "./loading.css"
 
 const Loading = () => {
 	return (
@@ -16,7 +17,7 @@ const Loading = () => {
 			}}
 		>
 			<Box sx={{ width: "40%" }}>
-				<h1 style={{ textAlign: "center", color: "white" }}>Loading...</h1>
+				<h1 style={{ textAlign: "center", color: "white" }} className="loading-header">Loading...</h1>
 				<LinearProgress />
 			</Box>
 		</Box>
