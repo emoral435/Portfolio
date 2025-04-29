@@ -22,13 +22,13 @@ const AboutMe = () => {
 			<Typography sx={{color: theme.palette.text.secondary, fontSize: '1.2rem'}} component={'div'}>
 				<Box sx={{color: theme.palette.text.secondary, fontSize: {xs: '.8rem', md: '1rem'}, fontWeight: 600, display: 'flex', flexDirection: 'column', gap: 3}}>
 				<div>
-					Hey there! 👋
+					I began my coding journey through Harvard’s CS50 course, where I was drawn to its rigor, challenge, and emphasis on understanding the lower-level inner workings of computers. Even as a kid, I loved taking apart computers to learn how they functioned, and that same curiosity continues to drive me today.
 				</div>
 				<div>
-					My journey into programming began with Harvard's CS50 course, where I fell in love with solving challenging problems. To me, programming shares qualities with my other hobbies—like origami and jewelry-making—in its modularity, creativity, and ability to share my work with the people around me. Ever since, I’ve enjoyed growing as a developer and embracing programming’s unique quirks along the way.
+					Since then, I’ve embraced programming as a lifelong learning journey, enjoying the constant opportunities to grow and the new challenges each day brings.
 				</div>
 				<div>
-					Outside of coding, I’m a proud cat parent to 15 🐈 and an avid home cook who loves experimenting in the kitchen!
+					Outside of coding, I’m a proud cat dad and a lifelong fan of building with Legos.
 				</div>
 				<Box sx={{display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'space-around', gap: 4}}>
 					<a href={'/EduardoMoralesResume.pdf'} download="EduardoMoralesResume">
