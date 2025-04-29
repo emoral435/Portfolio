@@ -5,7 +5,7 @@ import StorageIcon from '@mui/icons-material/Storage';
 import HomeWorkIcon from '@mui/icons-material/HomeWork';
 import LocationCityIcon from '@mui/icons-material/LocationCity';
 import Links from "../Links/Links"
-import PROFILEGIF from '../../../public/profilePhoto.jpeg'
+import PROFILEGIF from '../../../public/profilePic.jpg'
 import { introInfo } from "../../lib/constants";
 import Image from 'next/image';
 import UoI from '../../../public/university-of-illinois.svg'
