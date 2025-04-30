@@ -1,4 +1,4 @@
-export class Company {
+class Company {
   // guaranteed values each company should have
   readonly name: string;
   readonly location: string;
@@ -36,86 +36,64 @@ export class Company {
 }
 
 // Nextdoor experience
-const nextdoorBullets = [
-	"Waiting to start!",
-];
+const nextdoorBullets = "Waiting to start!".split("•");
 
 const Nextdoor = new Company(
 	"Nextdoor",
 	"San Francisco, California",
-    "Software Engineer Intern",
-    "May 2025",
-    "August 2025",
-    nextdoorBullets,
+  "Software Engineer Intern",
+  "May 2025",
+  "August 2025",
+  nextdoorBullets.map(bullet => bullet.trim()),
 );
 
 Nextdoor.url = "https://about.nextdoor.com/"
+
 // Enova experience
-const enovaBullets = [
-  "Developed an API in Go, receiving repository metadata from GitHub’s Webhook API to automate sending Slack messages regarding new pull requests and code reviews, accelerating pull request and code review workflow by 42%",
-  "Created 7 on-premise PostgreSQL tables to store pull-request metadata and track developers who are subscribed to the pull request service and funneled the information into Datadog, showcasing over 60% of developers use the service",
-  "Provisioned a new Wharf instance utilizing Terraform to manage private endpoints and authorized IP addresses, reducing CI/CD churn and increasing container deployment velocity by 15% during the development to production pipeline",
-];
+const enovaBullets = "Developed an API in Go, receiving pull request (PR) metadata from GitHub’s Webhook API to automate sending Slack messages, accelerating organizations code review and integration workflow by 42% • Created 7 PostgreSQL tables to track PR metadata and API service subscribers, utilizing lookup tables to reduce service’s data storage usage and eliminate repeated calls by 30% • Integrated service metadata into Datadog, revealing service adoption of 23 developers within 3 weeks of launch".split("•");
+
 const Enova = new Company(
   "Enova",
   "Chicago, Illinois",
   "Software Engineer Intern",
   "June 2024",
   "August 2024",
-  enovaBullets,
+  enovaBullets.map(bullet => bullet.trim()),
 );
 Enova.url = "https://www.enova.com/";
 // change for the 2024 cohort
 Enova.extraURL = "https://www.enova.com/interns/";
 
 // Nextcloud experience
-const ncBullets = [
-  "Developed an API in PHP to extend legacy MySQL databases to support storing file metadata," +
-    " resulting in version history and version author being displayed for each file, with support to display different file metadata in the future",
-
-  "Increased product's accessibility functionality to 10+ Vue.js components by adding focus-traps and keyboard listeners," +
-    " leading to a BITV certification, garnering new contracts for customers who wanted to use the product within Universities",
-
-  "Implemented a 'Personal Files' view by filtering out shared resources returned by WebDAV queries made in TypeScript," +
-    " enabling users to be able to differentiate between shared or personal files and folders",
-
-  "Refactored menu options in Vue.js to re-render every 30 minutes, ensuring menu displays accurate time-reliant actions",
-
-  "Collaborated with 12 engineers, maintaining CI/CD on an open-source content-collaboration product with 2.2M users",
-];
+const ncBullets = "Engineered a PHP API enabling MySQL databases to support file metadata storage, enhancing core productfunctionality with diverse metadata display capabilities, resulting in 2 new display options for file information• Increased product’s accessibility on 14 Vue components by adding focus-traps and keyboard listeners, leading to aBITV certification, securing 2 universities as product customers• Developed a ’Personal Files’ view in TypeScript, improving file distinction and eliminating related support ticketsby 90%, earning praise from 12 customers".split("•");
 const Nextcloud = new Company(
   "Nextcloud",
   "Stuggart, Germany",
   "Part-time Software Engineer Intern",
   "November 2023",
   "May 2024",
-  ncBullets,
+  ncBullets.map(bullet => bullet.trim()),
 );
 Nextcloud.url = "http://www.nextcloud.com";
 Nextcloud.extraURL = "https://youtu.be/fl2BQu2dWZY?si=lsmWHMpEJIk2gxHR&t=238";
 
 // Data Analyst Researcher experience
-const uicInternship = [
-  "Examined 20 gigabytes of patent data spanning over 3 decades, using Pandas to create dataframes relating to remote job" +
-    " positions, yielding a finding of the 10 most valued developer skills and traits from online job postings",
-
-  "Discovered an average 12% increase yearly since 2019 in new remote job positions, using Word2Vec to find associated" +
-    " documents created from patent and job dataframes, concluding that granted patents from 2 years prior led to the increase",
-
-  "Researched the relationship between unemployment and the number of yearly granted patents within the U.S. using Python," +
-    " finding a positive 1:1 correlation between unemployment percentage and the number of granted patents",
-];
+const uicInternship = "Analyzed correlations between patent data and job market trends using NumPy, uncovering a 12% annual increase in new remote job positions since 2019 • Conducted statistical analysis using Python to explore the relationship between employment rates and patent grants, revealing an increase in employment rates of 1.1% per 1k patent grants".split("•");
 
 const DataAnalyst = new Company(
   "University of Illinois Chicago",
   "Chicago, Illinois",
-  "Data Analyst",
+  "Data Analyst Researcher",
   "June 2023",
   "August 2023",
-  uicInternship,
+  uicInternship.map(bullet => bullet.trim()),
 );
 DataAnalyst.url = "https://engineering.uic.edu/";
-DataAnalyst.extraURL =
-  "https://medium.com/@emoral435/my-summer-as-a-data-analyst-intern-b62411e7d67a";
+DataAnalyst.extraURL = "https://medium.com/@emoral435/my-summer-as-a-data-analyst-intern-b62411e7d67a";
 
-export const myExperience = [Nextdoor, Enova, Nextcloud, DataAnalyst];
+const myExperience: Company[] = [Nextdoor, Enova, Nextcloud, DataAnalyst];
+
+export {
+  myExperience,
+  Company,
+};
