@@ -5,12 +5,12 @@
   font-family: var(--font-roboto);
 }
 
-.mg-sm {
-  margin: 1rem;
-}
-
 h1 {
   font-size: 5rem;
+}
+
+.mg-sm {
+  margin: 1rem;
 }
 
 .divider {
@@ -18,6 +18,10 @@ h1 {
   background-color: #333;
   margin: 1rem 0;
   width: 100%;
+}
+
+.hide-on-mobile {
+  display: block;
 }
 
 .blog {
@@ -155,6 +159,10 @@ h1 {
 @media (max-width: 630px) {
   .categories {
     grid-template-columns: 1fr;
+  }
+
+  .hide-on-mobile {
+    display: none;
   }
   
   .article > h2 {
