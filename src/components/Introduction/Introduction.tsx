@@ -5,7 +5,7 @@ import StorageIcon from '@mui/icons-material/Storage';
 import HomeWorkIcon from '@mui/icons-material/HomeWork';
 import LocationCityIcon from '@mui/icons-material/LocationCity';
 import Links from "../Links/Links"
-import PROFILEGIF from '../../../public/profilePic.jpg'
+import ProfilePic from '../../../public/profilePic.jpg'
 import { introInfo } from "../../lib/constants";
 import Image from 'next/image';
 import UoI from '../../../public/university-of-illinois.svg'
@@ -16,8 +16,22 @@ const Introduction = () => {
 		<Box component={'section'} sx={{ display: 'flex', flexDirection: {xs: 'column', md: 'row'}, gap: {xs: 2, md: 15}, justifyContent: 'center', alignItems: 'center' }}>
 			<Box component={'section'} sx={{display: 'flex', gap: {xs: '1rem', md:'3rem'}}}>
 				<Links inFooter={false}/>
-				<Box sx={{width: {xs: '15rem', md: '17rem', lg: '25rem'}, height: {xs: '15rem', md: '17rem', lg: '25rem'}, borderRadius: "15px", boxShadow: "5px 10px 20px rgb(0 0 0 / 0.5)"}}>
-					<Image src={PROFILEGIF} alt="Candid photo of myself" className="profile-pic"/>
+				<Box
+					sx={{
+						width: { xs: '15rem', md: '17rem', lg: '25rem' },
+						height: { xs: '15rem', md: '17rem', lg: '25rem' },
+						borderRadius: "15px",
+						boxShadow: "5px 10px 20px rgb(0 0 0 / 0.5)",
+						position: "relative", // Required for Image fill
+						overflow: "hidden" // Ensures borderRadius is respected
+					}}
+				>
+					<Image
+						src={ProfilePic}
+						alt="Candid photo of myself"
+						fill // This makes the image fill the parent container
+						className="profile-pic"
+					/>
 				</Box>
 			</Box>
 			<Box component={'section'}>
