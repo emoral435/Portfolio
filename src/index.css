@@ -147,10 +147,8 @@ a {
   }
 
   .profile-pic {
-    width: 100%;
-	height: auto;
-	/* border-radius: 46% 54% 53% 47% / 30% 28% 72% 70% ; */
-	border-radius: 15px;
+  object-fit: cover;
+  border-radius: 15px;
   }
 
   .footer {
