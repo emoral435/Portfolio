@@ -73,7 +73,6 @@ const Nextdoor = new Company({
     "Go",
     "Kubernetes",
     "Helm",
-    "Terraform",
     "Argo Rollouts",
     "Prometheus",
     "Datadog"
