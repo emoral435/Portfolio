@@ -132,7 +132,9 @@ export function Home() {
 							style={{
 								display: "flex",
 								justifyContent: "center",
-				gap: ".5rem",
+								gap: ".5rem",
+								alignItems: "center",
+								
 							}}
 						>
 							{theme.palette.mode === "dark" ? (
