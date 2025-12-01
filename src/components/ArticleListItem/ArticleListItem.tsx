@@ -19,8 +19,8 @@ const ArticleListItem = ({category, articles}: Props) => {
               <ChevronRightIcon width={20} />
               <Link href={`/blog/${article.id}`} className="center-around">
                 <div>{article.title}</div>
-                <EllipsisVerticalIcon width={20} />
-                <div>{article.date}</div>
+                <EllipsisVerticalIcon className="hide-on-mobile" width={20} />
+                <div className="hide-on-mobile">{article.date}</div>
               </Link>
             </div>
           ))
