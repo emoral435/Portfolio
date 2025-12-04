@@ -6,9 +6,9 @@ date: "04-15-2025"
 
 # Hello, World!
 
->> picture of one of my favorite cats, jupyter
-
 ![Jupyter](/articles/jupyter.jpg)
+
+>> picture of one of my favorite cats, jupyter
 
 ## About this blog
 Now, why the heck would I even want to have my thoughts out into the public? That, indeed, is a very good question to ask! For the most part, this blog is moreso for my own vanity. I just NEED to show off my cats. And I also love the roboto mono font, and also... writing words that is not *code* related is useful, too. I probably should do that more.
