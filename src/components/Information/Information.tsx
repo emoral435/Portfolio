@@ -1,24 +1,24 @@
-import AboutMe from './AboutMe';
-import Experience from './Experience';
-import Projects from './Projects';
+'use client'
+
+import AboutMeContent from '../AboutMeContent/AboutMeContent';
 import { Box } from '@mui/material';
+import { useTheme } from "@mui/material/styles";
 
-import type { projectNode } from '../../lib/constants';
-
-
-interface informationProps {
-  projects: projectNode[]
-}
-
-export default function Information({ projects } : informationProps) {
+export default function Information() {
+  const theme = useTheme()
 
   return (
-    <Box component={'div'} sx={{width: {xs: '100%', lg: '80rem'}}}>
-      <Box sx={{p: 1, boxShadow: "0 3px 10px rgb(0 0 0 / 0.2)"}}>
-          <AboutMe />
-          <Experience />
-          <Projects projects={projects}/>
-      </Box>
+    <Box 
+      component={'div'} 
+      sx={{
+        width: {xs: '100%', md: '80%', lg: '60%'},
+        p: {xs: 2, md: 4},
+        borderRadius: 2,
+        backgroundColor: theme.palette.mode === 'dark' ? '#222222' : '#f5f5f5',
+        boxShadow: "0 3px 10px rgb(0 0 0 / 0.2)"
+      }}
+    >
+      <AboutMeContent />
     </Box>
   );
 }

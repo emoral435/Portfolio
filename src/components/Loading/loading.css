@@ -2,6 +2,16 @@
   font-size: 3rem;
 }
 
+.loading-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100%;
+  opacity: 1;
+  transition: opacity 2s linear;
+}
+
 @media (max-width: 630px) {
   .loading-header {
     font-size: 1.5rem;
