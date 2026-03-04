@@ -1,5 +1,5 @@
 import { createTheme, ThemeProvider } from "@mui/material";
-import { ReactElement, createContext, useMemo, useState } from "react";
+import { ReactElement, createContext, useMemo, useState, useEffect } from "react";
 
 
 interface Children {
@@ -9,18 +9,47 @@ interface Children {
 /* tslint:disable:no-empty */
 export const ColorModeContext = createContext({ toggleColorMode: () => { undefined }})
 
-export const ToggleDarkMode = ({ children } : Children) => {
-    let defaultColorMode: 'light' | 'dark' = "dark"
-    // https://stackoverflow.com/questions/56393880/how-do-i-detect-dark-mode-using-javascript
-    window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', event => {
-        defaultColorMode = event.matches ? "dark" : "light";
-    });
+const STORAGE_KEY = 'theme-mode'
 
-    const [mode, setMode] = useState<'light' | 'dark'>(defaultColorMode)
+export const ToggleDarkMode = ({ children } : Children) => {
+    const [mode, setMode] = useState<'light' | 'dark'>('dark')
+    const [isHydrated, setIsHydrated] = useState(false)
+
+    useEffect(() => {
+        // Check localStorage first
+        const stored = localStorage.getItem(STORAGE_KEY)
+        if (stored === 'light' || stored === 'dark') {
+            setMode(stored)
+        } else {
+            // First visit - check system preference and store it
+            const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches
+            const systemMode = prefersDark ? 'dark' : 'light'
+            setMode(systemMode)
+            localStorage.setItem(STORAGE_KEY, systemMode)
+        }
+        setIsHydrated(true)
+
+        // Listen for system changes (only if no stored preference)
+        const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)')
+        const handler = (event: MediaQueryListEvent) => {
+            // Only update if user hasn't set a preference
+            if (!localStorage.getItem(STORAGE_KEY)) {
+                const newMode = event.matches ? 'dark' : 'light'
+                setMode(newMode)
+            }
+        }
+        mediaQuery.addEventListener('change', handler)
+        return () => mediaQuery.removeEventListener('change', handler)
+    }, [])
+
     const colorMode = useMemo(
         () => ({
             toggleColorMode: () => {
-                setMode((prevMode: string) => (prevMode === 'light') ? 'dark' : 'light')
+                setMode((prevMode: string) => {
+                    const newMode = prevMode === 'light' ? 'dark' : 'light'
+                    localStorage.setItem(STORAGE_KEY, newMode)
+                    return newMode
+                })
             }
         }), [],
     )
@@ -31,15 +60,15 @@ export const ToggleDarkMode = ({ children } : Children) => {
                 palette: {
                     mode,
                     primary: {
-                        light: '#757ce8',
-                        main: '#3f50b5',
-                        dark: '#002884',
+                        light: '#f08076',
+                        main: '#DE5246',
+                        dark: '#c53124',
                         contrastText: '#fff',
                     },
                     background: {
                         ...(mode === 'light' 
                         ?   {
-                                default: '#fbfbfe',
+                                default: '#e7eef1',
                             }
                         :   {
                                 default: '#161927'
@@ -59,8 +88,13 @@ export const ToggleDarkMode = ({ children } : Children) => {
                         )
                     }
                 },
-            }), [mode] // NOTE this means that the theme we will be sending is reacts to changes to mode, which the color mode context will change
+            }), [mode]
     )
+
+    // Prevent hydration mismatch by not rendering until hydrated
+    if (!isHydrated) {
+        return null
+    }
 
     return (
         <ColorModeContext.Provider value={colorMode}>

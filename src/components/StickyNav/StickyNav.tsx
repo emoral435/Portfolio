@@ -1,6 +1,7 @@
 import { ListItemButton, ListItemText, useTheme } from "@mui/material";
 import { ColorModeContext } from "../../lib/ColorContext";
 import { useContext, useEffect } from "react";
+import Link from 'next/link';
 
 import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
@@ -18,7 +19,21 @@ import DarkModeIcon from "@mui/icons-material/DarkMode";
 import LightModeIcon from "@mui/icons-material/LightMode";
 
 const drawerWidth = "100%";
-const navItems = ["Blog", "Home", "About", "Experience", "Projects", "Contact Me"];
+
+interface NavItemConfig {
+  label: string;
+  href: string;
+  isMailto?: boolean;
+}
+
+const getNavConfig = (): NavItemConfig[] => [
+  { label: "Blog", href: "/blog" },
+  { label: "Home", href: "/" },
+  { label: "Experience", href: "/experience" },
+  { label: "Projects", href: "/projects" },
+  { label: "Contact Me", href: "mailto:emoral435@gmail.com", isMailto: true },
+];
+
 export function Home() {
 	const theme = useTheme();
 	const [mobileOpen, setMobileOpen] = useState(false);
@@ -26,6 +41,7 @@ export function Home() {
 		theme.palette.mode === "dark" ? "Light mode" : "Dark mode",
 	);
 	const colorMode = useContext(ColorModeContext);
+	const navConfig = getNavConfig();
 
 	const handleDrawerToggle = () => {
 		setMobileOpen((prevState) => !prevState);
@@ -35,15 +51,35 @@ export function Home() {
 		setColorText(theme.palette.mode === "dark" ? "Light Mode" : "Dark Mode");
 	}, [theme.palette.mode]);
 
-	const getRedirect = (item: string) => {
-	if (item === "Contact Me") {
-		return "mailto:emoral435@gmail.com";
-	} else if (item === "Blog") {
-		return "/blog";
-	}
+	const renderNavLink = (item: NavItemConfig) => {
+		const content = (
+			<button
+				style={{
+					fontWeight: "bold",
+					fontSize: "large",
+					marginLeft: "1rem",
+					background: "none",
+					border: "none",
+					color: "inherit",
+					cursor: "pointer",
+					padding: 0,
+				}}
+				className="nav-btn"
+			>
+				{item.label}
+			</button>
+		);
 
-	return `#${item}`;
-	}
+		if (item.isMailto) {
+			return <a href={item.href} key={item.label}>{content}</a>;
+		}
+
+		return (
+			<Link href={item.href} key={item.label}>
+				{content}
+			</Link>
+		);
+	};
 
 	const drawer = (
 		<Box className="--font-roboto" onClick={handleDrawerToggle} sx={{ textAlign: "center"}}>
@@ -52,13 +88,21 @@ export function Home() {
 			</Typography>
 			<Divider />
 			<List>
-				{navItems.map((item) => (
-					<ListItem key={item} disablePadding>
-						<a className='' href={ getRedirect(item) }>
+				{navConfig.map((item) => (
+					<ListItem key={item.label} disablePadding>
+						{item.isMailto ? (
+							<a href={item.href}>
 								<ListItemButton sx={{ textAlign: "center" }}>
-									<ListItemText primary={item} />
+									<ListItemText primary={item.label} />
 								</ListItemButton>
-						</a>
+							</a>
+						) : (
+							<Link href={item.href}>
+								<ListItemButton sx={{ textAlign: "center" }}>
+									<ListItemText primary={item.label} />
+								</ListItemButton>
+							</Link>
+						)}
 					</ListItem>
 				))}
 			</List>
@@ -105,26 +149,13 @@ export function Home() {
 						}}
 						className="name"
 					>
-						<a href="#">Eduardo Morales</a>
+						<Link href="/">Eduardo Morales</Link>
 					</Typography>
 					<section
 						style={{ display: "flex", gap: "1rem", alignItems: "center" }}
 					>
 						<Box sx={{ display: { xs: "none", md: "flex" }, gap: "1rem" }}>
-							{navItems.map((item) => (
-								<a href={ getRedirect(item) } key={item}>
-									<button
-										style={{
-											fontWeight: "bold",
-											fontSize: "large",
-											marginLeft: "1rem",
-										}}
-										className="button nav-btn"
-									>
-										{item}
-									</button>
-								</a>
-							))}
+							{navConfig.map((item) => renderNavLink(item))}
 						</Box>
 						<button
 							className="button nav-btn"
@@ -168,7 +199,7 @@ export function Home() {
 					open={mobileOpen}
 					onClose={handleDrawerToggle}
 					ModalProps={{
-						keepMounted: true, // Better open performance on mobile.
+						keepMounted: true,
 					}}
 					sx={{
 						display: { xs: "flex", sm: "none" },

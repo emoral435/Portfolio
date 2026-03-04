@@ -1,10 +1,10 @@
 :root {
-    --primaryDark: #002884;
-    --primaryLight: #757ce8;
-    --primaryMain: #3f50b5;
+    --primaryDark: #f08076;
+    --primaryLight: #DE5246;
+    --primaryMain: #c53124;
     --scrollbarBG: #6472b1;
     --thumbBG: #90A4AE;
-    --footerNav: #d9b63c;
+    --footerNav: #90A4AE;
 }
 
 html {

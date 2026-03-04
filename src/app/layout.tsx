@@ -1,5 +1,6 @@
 import { Roboto_Mono } from 'next/font/google'
 import type { Metadata } from "next"
+import '../index.css'
 
 const roboto = Roboto_Mono({
     weight: ['400', '500', '600', '700'],
