@@ -31,7 +31,7 @@ const getNavConfig = (): NavItemConfig[] => [
   { label: "Home", href: "/" },
   { label: "Experience", href: "/experience" },
   { label: "Projects", href: "/projects" },
-  { label: "Contact Me", href: "mailto:emoral435@gmail.com", isMailto: true },
+  { label: "Contact Me", href: "/contact" },
 ];
 
 export function Home() {
@@ -70,10 +70,6 @@ export function Home() {
 			</button>
 		);
 
-		if (item.isMailto) {
-			return <a href={item.href} key={item.label}>{content}</a>;
-		}
-
 		return (
 			<Link href={item.href} key={item.label}>
 				{content}
@@ -90,13 +86,7 @@ export function Home() {
 			<List>
 				{navConfig.map((item) => (
 					<ListItem key={item.label} disablePadding>
-						{item.isMailto ? (
-							<a href={item.href}>
-								<ListItemButton sx={{ textAlign: "center" }}>
-									<ListItemText primary={item.label} />
-								</ListItemButton>
-							</a>
-						) : (
+						{(
 							<Link href={item.href}>
 								<ListItemButton sx={{ textAlign: "center" }}>
 									<ListItemText primary={item.label} />

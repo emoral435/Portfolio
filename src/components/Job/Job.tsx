@@ -101,7 +101,7 @@ const Job = ({ position: job, accentColor }: ICompany) => {
 				<Box
 					sx={{
 						fontSize: { xs: '.85rem', md: '.95rem' },
-						color: theme.palette.text.secondary,
+						color: theme.palette.text.primary,
 						display: 'flex',
 						alignItems: 'center', // ✅ ensures vertical alignment
 						gap: 1,
@@ -176,14 +176,14 @@ const Job = ({ position: job, accentColor }: ICompany) => {
         </Box>
 
         {/* Summary */}
-        <Typography sx={{ mb: 1.5, lineHeight: 1.7, fontFamily: fontMono }}>
+        <Typography color="text.primary" sx={{ mb: 1.5, lineHeight: 1.7, fontFamily: fontMono  }}>
           {(job as any).summary ?? ''}
         </Typography>
 
         <Divider sx={{ my: 1.5 }} />
 
         {/* Achievements */}
-        <Box component="ul" sx={{ pl: 2.5, m: 0, display: 'flex', flexDirection: 'column', gap: .75 }}>
+        <Box component="ul" color="text.primary" sx={{ pl: 2.5, m: 0, display: 'flex', flexDirection: 'column', gap: .75 }}>
           {(job as any).achievements?.map((line: string) => (
             <li key={line}>
               <Typography component="span" sx={{ fontFamily: fontMono }}>
@@ -207,7 +207,7 @@ const Job = ({ position: job, accentColor }: ICompany) => {
             <Typography sx={{ fontWeight: 700, mb: .5, fontFamily: fontMono, color: accent }}>
               Impact
             </Typography>
-            <Typography sx={{ fontFamily: fontMono }}>
+            <Typography color="text.primary" sx={{ fontFamily: fontMono }}>
               {(job as any).impact}
             </Typography>
           </Box>
