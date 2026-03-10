@@ -6,7 +6,7 @@ const Footer = () => {
     const navItems = [
         { label: "Experience", href: "/experience" },
         { label: "Projects", href: "/projects" },
-        { label: "Contact Me", href: "mailto:emoral435@gmail.com", isMailto: true }
+        { label: "Contact Me", href: "/contact" }
     ]
 
   return (
@@ -18,19 +18,11 @@ const Footer = () => {
         </Box>
         <Box sx={{ display: 'flex', gap: '1rem', flexDirection: {xs: 'column', md: 'row'} }}>
             {navItems.map((item) => (
-                item.isMailto ? (
-                    <a className="--font-roboto" href={item.href} key={item.label}>
-                        <button style={{fontWeight: 'bold', fontSize: 'large'}} className="button footer-nav" >
-                            {item.label}
-                        </button>
-                    </a>
-                ) : (
-                    <Link className="--font-roboto" href={item.href} key={item.label}>
-                        <button style={{fontWeight: 'bold', fontSize: 'large'}} className="button footer-nav" >
-                            {item.label}
-                        </button>
-                    </Link>
-                )
+                <Link className="--font-roboto" href={item.href} key={item.label}>
+                    <button style={{fontWeight: 'bold', fontSize: 'large'}} className="button footer-nav" >
+                        {item.label}
+                    </button>
+                </Link>
             ))}
         </Box>
     </Box>
