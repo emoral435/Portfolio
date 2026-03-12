@@ -7,6 +7,14 @@ import html from "remark-html"
 
 import type { ArticleItem } from "../app/types"
 
+const convertYouTubeLinks = (content: string): string => {
+  const youtubeRegex = /(?:https?:\/\/)?(?:www\.)?(?:youtube\.com\/(?:[^\/\n\s]+\/\S+|\/(?:v|e(?:mbed)?)\/|\S*?[?&]v=)|youtu\.be\/)([a-zA-Z0-9_-]{11})/g
+  
+  return content.replace(youtubeRegex, (_match, videoId) => {
+    return `<div class="video-container"><iframe width="560" height="315" src="https://www.youtube.com/embed/${videoId}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>`
+  })
+}
+
 const articlesDirectory = path.join(process.cwd(), "src/app/blog/articles")
 
 const getSortedArticles = (): ArticleItem[] => {
@@ -61,7 +69,9 @@ export const getArticleData = async (id: string) => {
   const matterResult = matter(fileContents)
   const processedContent = await remark().use(html).process(matterResult.content)
 
-  const contentHtml = processedContent.toString()
+  let contentHtml = processedContent.toString()
+  contentHtml = convertYouTubeLinks(contentHtml)
+
   return {
     id,
     contentHtml,
