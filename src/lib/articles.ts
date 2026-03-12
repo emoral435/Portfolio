@@ -8,6 +8,7 @@ import html from "remark-html"
 import type { ArticleItem } from "../app/types"
 
 const convertYouTubeLinks = (content: string): string => {
+  //eslint-disable-next-line
   const youtubeRegex = /(?:https?:\/\/)?(?:www\.)?(?:youtube\.com\/(?:[^\/\n\s]+\/\S+|\/(?:v|e(?:mbed)?)\/|\S*?[?&]v=)|youtu\.be\/)([a-zA-Z0-9_-]{11})/g
   
   return content.replace(youtubeRegex, (_match, videoId) => {

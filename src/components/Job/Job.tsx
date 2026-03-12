@@ -2,10 +2,24 @@ import Image from 'next/image'
 import { Box, Button, Chip, Divider, Typography, useTheme } from "@mui/material"
 import OpenInNewIcon from '@mui/icons-material/OpenInNew';
 import { alpha } from '@mui/material/styles'
-import { Company } from "../../lib/experience-service"
+
+interface IJob {
+  name: string;
+  location: string;
+  role: string;
+  startDate: string;
+  endDate: string;
+  summary: string;
+  achievements: string[];
+  impact: string;
+  technologies: string[];
+  redirect?: string;
+  extraRedirect?: string;
+  logoUrl?: string;
+}
 
 interface ICompany {
-  position: Company
+  position: IJob
   accentColor?: string
 }
 
@@ -42,7 +56,7 @@ const Job = ({ position: job, accentColor }: ICompany) => {
           }}
         >
           {/* Logo */}
-          {(job as any).logoUrl && (
+          {job.logoUrl && (
             <Box
               sx={{
                 width: { xs: logoSize.xs, sm: logoSize.sm, md: logoSize.md },
@@ -52,7 +66,7 @@ const Job = ({ position: job, accentColor }: ICompany) => {
               }}
             >
               <Image
-                src={(job as any).logoUrl}
+                src={job.logoUrl}
                 alt={`${job.name} logo`}
                 fill
                 sizes="(max-width: 600px) 32px, (max-width: 900px) 36px, 42px"
@@ -129,10 +143,10 @@ const Job = ({ position: job, accentColor }: ICompany) => {
 
         {/* Links */}
         <Box sx={{ display: 'flex', gap: 1, flexWrap: 'wrap' }}>
-          {(job as any).redirect && (
+          {job.redirect && (
             <Button
               component="a"
-              href={(job as any).redirect}
+              href={job.redirect}
               target="_blank"
               rel="noopener noreferrer"
               endIcon={<OpenInNewIcon />}
@@ -152,10 +166,10 @@ const Job = ({ position: job, accentColor }: ICompany) => {
               Company
             </Button>
           )}
-          {(job as any).extraRedirect && (
+          {job.extraRedirect && (
             <Button
               component="a"
-              href={(job as any).extraRedirect}
+              href={job.extraRedirect}
               target="_blank"
               rel="noopener noreferrer"
               endIcon={<OpenInNewIcon />}
@@ -177,14 +191,14 @@ const Job = ({ position: job, accentColor }: ICompany) => {
 
         {/* Summary */}
         <Typography color="text.primary" sx={{ mb: 1.5, lineHeight: 1.7, fontFamily: fontMono  }}>
-          {(job as any).summary ?? ''}
+          {job.summary ?? ''}
         </Typography>
 
         <Divider sx={{ my: 1.5 }} />
 
         {/* Achievements */}
         <Box component="ul" color="text.primary" sx={{ pl: 2.5, m: 0, display: 'flex', flexDirection: 'column', gap: .75 }}>
-          {(job as any).achievements?.map((line: string) => (
+          {job.achievements?.map((line: string) => (
             <li key={line}>
               <Typography component="span" sx={{ fontFamily: fontMono }}>
                 {line}
@@ -194,7 +208,7 @@ const Job = ({ position: job, accentColor }: ICompany) => {
         </Box>
 
         {/* Impact */}
-        {(job as any).impact && (
+        {job.impact && (
           <Box
             sx={{
               mt: 2,
@@ -208,13 +222,13 @@ const Job = ({ position: job, accentColor }: ICompany) => {
               Impact
             </Typography>
             <Typography color="text.primary" sx={{ fontFamily: fontMono }}>
-              {(job as any).impact}
+              {job.impact}
             </Typography>
           </Box>
         )}
 
         {/* Tech stack */}
-        {(job as any).technologies?.length ? (
+        {job.technologies?.length ? (
           <>
             <Divider sx={{ mt: 2 }} />
             <Box sx={{ mt: 2 }}>
@@ -222,7 +236,7 @@ const Job = ({ position: job, accentColor }: ICompany) => {
                 Tech Stack
               </Typography>
               <Box sx={{ display: 'flex', gap: .6, flexWrap: 'wrap' }}>
-                {(job as any).technologies.map((t: string) => (
+                {job.technologies.map((t: string) => (
                   <Chip
                     key={t}
                     label={t}
