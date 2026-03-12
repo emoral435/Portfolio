@@ -1,5 +1,5 @@
 ---
-title: "Hello World"
+title: "Hello, World!"
 category: "Software Engineering"
 date: "04-15-2025"
 ---
@@ -21,3 +21,4 @@ Thank you for reading. **Goodbye, World!**
 
 ### Revision History
 * 11-30-2025: Updated Jupyter's photo.
+* 03-11-2026: Updated title.

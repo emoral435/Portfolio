@@ -15,12 +15,12 @@ const ArticleListItem = ({category, articles}: Props) => {
       <div className="center-col-start">
         {
           articles.map((article, id) => (
-            <div className="center-around w-max" key={id}>
-              <ChevronRightIcon width={20} />
-              <Link href={`/blog/${article.id}`} className="center-around">
-                <div>{article.title}</div>
-                <EllipsisVerticalIcon width={20} />
-                <div>{article.date}</div>
+            <div className="article-item" key={id}>
+              <ChevronRightIcon className="chevron-icon" width={20} />
+              <Link href={`/blog/${article.id}`} className="article-link">
+                <span className="article-title">{article.title}</span>
+                <EllipsisVerticalIcon className="ellipsis-icon" width={20} />
+                <span className="article-date">{article.date}</span>
               </Link>
             </div>
           ))
