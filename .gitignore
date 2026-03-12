@@ -13,6 +13,7 @@ dist
 *.local
 .next
 next-env.d.ts
+*.tsbuildinfo
 
 # Editor directories and files
 .vscode/*
