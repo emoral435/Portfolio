@@ -3,8 +3,8 @@ const introInfo = {
 	floatingText: "Welcome",
     welcome: "My name is Eduardo, nice to meet you!",
     interest: "I love cats and coding!",
-	location: "San Francisco, California",
-    position: "Software Engineer @ Nextdoor",
+	location: "New York City, New York",
+    position: "Incoming Software Engineer @ Abridge",
     major: "Math + Computer Science",
     uni: "University of Illinois",
 }
