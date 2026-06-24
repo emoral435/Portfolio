@@ -52,6 +52,26 @@ class Company {
   }
 }
 
+// ---------- Abridge ----------
+const Abridge = new Company({
+  name: "Abridge",
+  location: "New York City, NY",
+  role: "Software Engineer",
+  startDate: "July 2026",
+  endDate: "Dec 2026",
+  summary: "Joined the Platform team to... [still haven't started guys! So trust, this section will pop off when I hit the ground running!]",
+  achievements: [
+    "Joining the Platform team to work on infrastructure and deployment tooling"
+  ],
+  impact: "Result: waiting to start...",
+  technologies: [
+    "Terraform",
+    "Kubernetes",
+  ],
+  redirect: "https://www.abridge.com",
+  logoUrl: "/logos/abridge.png"
+});
+
 // ---------- Nextdoor ----------
 const Nextdoor = new Company({
   name: "Nextdoor",
@@ -145,6 +165,6 @@ const DataAnalyst = new Company({
   logoUrl: "/logos/uic.png"
 });
 
-const myExperience: Company[] = [Nextdoor, Enova, Nextcloud, DataAnalyst];
+const myExperience: Company[] = [Abridge, Nextdoor, Enova, Nextcloud, DataAnalyst];
 
 export { myExperience, Company };

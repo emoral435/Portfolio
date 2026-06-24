@@ -5,6 +5,7 @@ import Job from '../Job/Job'
 import { Company, myExperience } from '../../lib/experience-service'
 
 const accentMap: Record<string, string> = {
+  Abridge: '#EA2C00',
   Nextdoor: '#69B36D',
   Enova: '#1B6DE0',
   Nextcloud: '#1B6DE0',
