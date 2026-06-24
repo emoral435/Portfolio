@@ -62,10 +62,9 @@ const Nextdoor = new Company({
   summary:
     "Joined the Platform Infrastructure team to improve the systems that power microservice deployments. Focused on faster, safer canary rollouts and clearer observability for engineering teams.",
   achievements: [
-    "Enabled early promotion in canary deployments, leading to ~11% faster release cycles across multiple services.",
-    "Built a Datadog dashboard for canary rollouts, improving real-time visibility and reducing average incident triage time by ~30%.",
-    "Integrated subset-based traffic shifting to safely test experimental images and accelerate rollbacks when needed.",
-    "Evaluated Argo Rollouts vs. Flagger and recommended staying with Argo for better maintainability and ecosystem fit."
+    "Optimized Nextdoor’s canary deployment pipeline, contributing an open source PR to Argo Rollouts (CNCF Kubernetes project) removing hard-coded pod thresholds, reducing release latency by 11% across 4+ microservices",
+    "Designed and deployed a Datadog-based observability layer with per-cluster agent scraping, improving canary telemetry across 6 services and cutting incident triage time by 30%",
+    "Implemented traffic-shifting and service-mesh routing via subset-based DestinationRules, extending Argo Rollouts through an open source contribution , enabling A/B testing of experimental images in production across 2 services"
   ],
   impact:
     "Result: releases became faster, safer, and easier to monitor—helping teams ship with more confidence.",
@@ -91,9 +90,9 @@ const Enova = new Company({
   summary:
     "Worked with the data engineering team to turn manual developer workflows into automated, data-driven processes for faster code reviews and clearer adoption metrics.",
   achievements: [
-    "Built a Go API to process GitHub Webhook PR events and send Slack notifications, improving code review turnaround by ~42%.",
-    "Designed 7 PostgreSQL tables with lookup patterns that reduced redundant calls by ~30% and simplified data access.",
-    "Integrated service metrics into Datadog to track adoption—23 developers onboarded within three weeks."
+    "Developed a backend API in Go to ingest GitHub webhook metadata and trigger automated Slack notifications, accelerating the organization’s code review pipeline by 42%",
+    "Designed and normalized 7 PostgreSQL tables to track PR metadata and API subscribers, reducing redundant queries by 30% and improving long-term data storage efficiency",
+    "Integrated Datadog service metadata logging, surfacing adoption metrics across 23 developers within 3 weeks of launch and establishing observability for future instrumentation"
   ],
   impact:
     "Result: engineers moved faster with higher visibility into review pipelines and service usage.",
@@ -113,9 +112,8 @@ const Nextcloud = new Company({
   summary:
     "Contributed to the frontend and accessibility teams of an open-source collaboration platform, improving usability and inclusivity for diverse users.",
   achievements: [
-    "Built a PHP API enabling MySQL to store new file metadata, adding two new file info display options.",
-    "Improved accessibility on 14 Vue components with keyboard navigation and focus traps, contributing to BITV certification.",
-    "Developed a TypeScript “Personal Files” view that reduced related support tickets by ~90% and earned customer praise."
+    "Built a PHP API enabling extensible file metadata storage in MySQL, expanding core product functionality and supporting two new file-information display modes used by enterprise customers",
+    "Enhanced frontend accessibility and keyboard navigation across 14+ Vue.js components via focus-traps, event listeners, and ARIA-aligned semantics, contributing to two university-level partnerships"
   ],
   impact:
     "Result: a more capable and accessible product that supported new university partnerships.",
