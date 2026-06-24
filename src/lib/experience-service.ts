@@ -58,7 +58,7 @@ const Abridge = new Company({
   location: "New York City, NY",
   role: "Software Engineer",
   startDate: "July 2026",
-  endDate: "Dec 2026",
+  endDate: "December 2026",
   summary: "Joined the Platform team to... [still haven't started guys! So trust, this section will pop off when I hit the ground running!]",
   achievements: [
     "Joining the Platform team to work on infrastructure and deployment tooling"

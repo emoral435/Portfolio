@@ -30,6 +30,12 @@ MONTH_ABBREV = {
     "Sep": 8, "Oct": 9, "Nov": 10, "Dec": 11,
 }
 
+ABBREV_TO_FULL = {
+    "Jan": "January", "Feb": "February", "Mar": "March", "Apr": "April",
+    "May": "May", "Jun": "June", "Jul": "July", "Aug": "August",
+    "Sep": "September", "Oct": "October", "Nov": "November", "Dec": "December",
+}
+
 
 def extract_text(pdf_path: Path) -> str:
     reader = PdfReader(pdf_path)
@@ -70,6 +76,17 @@ def date_score(date_str: str) -> int:
     """Higher = more recent. Used for descending chronological sort."""
     year, month = parse_date(date_str)
     return year * 12 + month
+
+
+def normalize_date(date_str: str) -> str:
+    """Convert abbreviated month to full name, e.g. 'Dec. 2026' -> 'December 2026'."""
+    s = date_str.strip()
+    parts = s.split()
+    if len(parts) >= 2:
+        abbr = parts[0][:3].capitalize()
+        if abbr in ABBREV_TO_FULL:
+            parts[0] = ABBREV_TO_FULL[abbr]
+    return " ".join(parts)
 
 
 def parse_experience(text: str) -> list[dict]:
@@ -120,8 +137,8 @@ def parse_experience(text: str) -> list[dict]:
                     entries.append(current)
 
                 role = s[: date_matches[0].start()].strip()
-                start = date_matches[0].group().replace(".", "")
-                end = date_matches[-1].group().replace(".", "")
+                start = normalize_date(date_matches[0].group())
+                end = normalize_date(date_matches[-1].group())
 
                 current = {
                     "company_name": "",
@@ -136,7 +153,7 @@ def parse_experience(text: str) -> list[dict]:
             # Company line: no bullet, no dates, follows role line
             if current is not None and not current["company_name"]:
                 # First word is company name, rest is location
-                parts = s.split(1)
+                parts = s.split(maxsplit=1)
                 company = parts[0]
                 location = parts[1] if len(parts) > 1 else ""
                 current["company_name"] = company
